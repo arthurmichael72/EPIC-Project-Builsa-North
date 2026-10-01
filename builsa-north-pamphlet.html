@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Builsa North's Team Plan — Pamphlet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2B1F18;--ink-2:#5A4537;--ink-3:#8A7362;--cream:#F8F1E2;--cream-2:#FDF9F0;--haze:#F1E3CB;--skywash:#E7EED8;
+--savanna:#2E6B4F;--sav-deep:#23573F;--clay:#B8472A;--marigold:#E9A23B;--sun:#FFC94D;--night:#5A2B1C}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;background:#8a8a8a}
+@page{ size:297mm 210mm; margin:0 }
+.sheet{ width:297mm; height:210mm; display:grid; grid-template-columns:repeat(3,99mm);
+        background:var(--cream); overflow:hidden; position:relative; page-break-after:always }
+.sheet:last-child{ page-break-after:auto }
+.panel{ width:99mm; height:210mm; padding:11mm 9mm 13mm; overflow:hidden; position:relative;
+        display:flex; flex-direction:column }
+.panel + .panel{ border-left:.2mm dashed rgba(43,31,24,.3) }
+h2.t{ font-size:16pt; font-weight:800; letter-spacing:-.3pt; line-height:1.1; margin:0 0 3mm }
+.kick{ font-size:7.4pt; font-weight:800; letter-spacing:1.6pt; text-transform:uppercase; color:var(--savanna); margin:0 0 2mm }
+p{ margin:0 0 3mm; font-size:9.2pt; line-height:1.5; color:var(--ink-2) }
+b{ color:var(--ink) }
+.small{ font-size:7.8pt; line-height:1.45; color:var(--ink-3) }
+.cover{ padding:0; background:var(--cream) }
+.cover .sky{ width:99mm; height:44mm; display:block }
+.cover .body{ flex:1; padding:0 9mm 13mm; display:flex; flex-direction:column; background:var(--cream) }
+.sign{ background:var(--night); border-radius:2.6mm; padding:6mm 5mm 6.5mm; text-align:center;
+       box-shadow:0 1.6mm 0 rgba(0,0,0,.14); margin-top:-3.5mm; position:relative; z-index:2 }
+.sign h1{ margin:0; color:#fff; font-size:22pt; font-weight:800; line-height:1.0; letter-spacing:-.8pt }
+.sign p{ margin:2.6mm 0 0; color:#FFD27A; font-size:8pt; font-weight:600; letter-spacing:1pt; text-transform:uppercase; line-height:1.4 }
+.hook{ margin-top:5mm; font-size:10.5pt; line-height:1.45; color:var(--ink-2); text-align:center }
+.hook b{ color:var(--ink) }
+.teaser{ margin-top:5mm; background:#fff; border-radius:2.6mm; padding:4mm 5mm; box-shadow:0 .8mm 0 rgba(43,31,24,.1) }
+.teaser h4{ margin:0 0 2.2mm; font-size:8pt; font-weight:800; letter-spacing:1.1pt; text-transform:uppercase; color:var(--sav-deep); text-align:center }
+.teaser div{ display:flex; align-items:center; gap:2.6mm; font-size:8.4pt; font-weight:600; color:var(--ink-2); margin-bottom:1.5mm }
+.teaser div:last-child{ margin-bottom:0 }
+.teaser i{ width:2.8mm; height:2.8mm; border-radius:50%; display:block; flex:0 0 2.8mm }
+.coverfoot{ margin-top:auto; display:flex; align-items:center; gap:4mm; justify-content:center }
+.coverfoot img{ width:23mm; height:22mm; object-fit:contain }
+.coverfoot span{ font-size:7pt; font-weight:800; letter-spacing:1pt; color:var(--sav-deep); line-height:1.35 }
+.card{ background:#fff; border-radius:2.6mm; padding:4.2mm 4.4mm; box-shadow:0 .8mm 0 rgba(43,31,24,.1); margin-bottom:3.6mm }
+.card h3{ margin:0 0 1.6mm; font-size:10.5pt; font-weight:800; line-height:1.15 }
+.card p{ margin:0; font-size:8.8pt; line-height:1.45; color:var(--ink-3) }
+.row{ display:flex; gap:3.4mm; align-items:flex-start; margin-bottom:3.4mm }
+.row.mid{ align-items:center }
+.disc{ flex:0 0 8.4mm; width:8.4mm; height:8.4mm; border-radius:50%; display:grid; place-items:center; color:#fff }
+.row h4{ margin:.4mm 0 .9mm; font-size:9.4pt; font-weight:700; line-height:1.2 }
+.row.mid h4{ margin:0 }
+.row p{ margin:0; font-size:8.4pt; line-height:1.42; color:var(--ink-3) }
+.zone{ margin-bottom:5mm }
+.zhead{ display:flex; align-items:center; gap:3mm; margin-bottom:2.4mm }
+.znum{ flex:0 0 9mm; width:9mm; height:9mm; border-radius:2.6mm; display:grid; place-items:center; color:#fff; font-size:13pt; font-weight:800 }
+.zdisc{ flex:0 0 9mm; width:9mm; height:9mm; border-radius:50%; display:grid; place-items:center; color:#fff }
+.zt h3{ margin:0; font-size:11.5pt; font-weight:800; line-height:1.08; letter-spacing:-.2pt }
+.zt span{ font-size:6.6pt; font-weight:800; letter-spacing:1.1pt; text-transform:uppercase }
+.zlede{ font-size:9pt; font-weight:600; color:var(--ink-2); margin:0 0 2.4mm }
+ul.acts{ margin:0; padding:0; list-style:none }
+ul.acts li{ font-size:8.4pt; line-height:1.42; color:var(--ink-3); padding-left:4.6mm; position:relative; margin-bottom:1.8mm }
+ul.acts li::before{ content:""; position:absolute; left:0; top:1.6mm; width:2.1mm; height:2.1mm; border-radius:50%; background:currentColor; opacity:.55 }
+ul.acts li b{ color:var(--ink-2) }
+ul.acts li i{ font-style:normal; font-weight:700; color:var(--ink-2) }
+.back{ background:var(--haze) }
+.logos{ background:#fff; border-radius:2.6mm; padding:5mm 4mm; display:grid; grid-template-columns:1fr 1fr;
+        gap:5mm 3mm; place-items:center; margin-bottom:4mm }
+.logos img{ max-width:100%; max-height:13mm; object-fit:contain; display:block }
+.logos img.wide{ max-height:8.5mm }
+.ack{ font-size:6.6pt; line-height:1.45; color:var(--ink-3); margin:0 0 4mm; text-align:justify }
+.srcbox{ border-top:.3mm solid rgba(43,31,24,.2); padding-top:3mm; margin-top:auto }
+.dreams{ display:grid; grid-template-columns:repeat(4,1fr); gap:2.2mm }
+.goal{ background:#fff; border-radius:2.4mm; padding:2.2mm 1.2mm 2.3mm; text-align:center; box-shadow:0 .8mm 0 rgba(43,31,24,.1) }
+.goal .gd{ width:6.4mm; height:6.4mm; border-radius:50%; display:grid; place-items:center; color:#fff; margin:0 auto 1.4mm }
+.goal b{ display:block; font-size:8pt; font-weight:700; line-height:1.15 }
+.goal span{ display:block; font-size:6.3pt; line-height:1.28; color:var(--ink-3); margin-top:.6mm }
+.facts{ display:grid; grid-template-columns:1fr 1fr; gap:3mm; margin-bottom:4mm }
+.fact{ background:#fff; border-radius:2.4mm; padding:3mm 2mm; text-align:center; box-shadow:0 .8mm 0 rgba(43,31,24,.1) }
+.fact .n{ font-size:21pt; font-weight:800; line-height:.95; letter-spacing:-.8pt }
+.fact .l{ margin-top:1.2mm; font-size:6.6pt; font-weight:700; letter-spacing:.6pt; text-transform:uppercase; color:var(--clay); line-height:1.25 }
+.team{ display:flex; flex-wrap:wrap; gap:1.8mm; margin-top:1mm }
+.chip{ display:flex; align-items:center; gap:1.6mm; background:#fff; border-radius:99mm; padding:1mm 2.8mm 1mm 1mm;
+       box-shadow:0 .6mm 0 rgba(43,31,24,.09); font-size:7.6pt; font-weight:700; color:var(--ink) }
+.chip i{ width:5.6mm; height:5.6mm; border-radius:50%; display:grid; place-items:center; color:#fff }
+.cheer{ background:var(--clay); color:#fff; border-radius:2.6mm; padding:4mm 5mm; text-align:center; margin-bottom:3.6mm }
+.cheer h3{ margin:0 0 1.2mm; font-size:11pt; font-weight:800; line-height:1.15; color:#fff }
+.cheer p{ margin:0; font-size:8.4pt; line-height:1.4; font-weight:600; color:#FFDCCB }
+.bigidea{ background:var(--savanna); color:#fff; border-radius:2.6mm; padding:5mm; margin-top:auto }
+.bigidea p{ color:#DCEDE2; font-size:8.8pt; margin:0; line-height:1.5 }
+.bigidea b{ color:var(--sun) }
+.panelnum{ position:absolute; bottom:4.5mm; left:0; right:0; text-align:center;
+           font-size:6pt; font-weight:700; letter-spacing:1pt; text-transform:uppercase; color:rgba(43,31,24,.34) }
+.panel.spread{ justify-content:space-between }
+.panel.spread .zone{ margin-bottom:0 }
+.panel.tight .row{ margin-bottom:2.5mm }
+.panel.tight h2.t{ margin-bottom:2.3mm }
+.panel.tight .card{ margin-bottom:2.6mm; padding:3.6mm 4.2mm }
+.panel.tight .card p{ font-size:8.5pt; line-height:1.42 }
+.panel.last .zone{ margin-bottom:3.6mm }
+.panel.last .card,.panel.last .cheer{ margin-bottom:3mm }
+@media screen{ body{ padding:8mm } .sheet{ box-shadow:0 0 6mm rgba(0,0,0,.35) } .sheet + .sheet{ margin-top:8mm } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-heart" transform="translate(0 -1)"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7 2.6C19 15.4 12 20 12 20Z"/></g>
+  <g id="i-child"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20.5c0-3.6 2.9-6.2 6.5-6.2s6.5 2.6 6.5 6.2"/></g>
+  <g id="i-family"><circle cx="8" cy="7.6" r="2.8"/><circle cx="16.6" cy="9" r="2.2"/><path d="M3.4 19.6c0-2.9 2.1-5 4.6-5s4.6 2.1 4.6 5"/><path d="M14 19.6c0-2.3 1.2-3.9 2.9-3.9s2.9 1.6 2.9 3.9"/></g>
+  <g id="i-people"><circle cx="12" cy="6.6" r="2.6"/><circle cx="5" cy="10.4" r="2.2"/><circle cx="19" cy="10.4" r="2.2"/><path d="M7.4 18.4c0-2.6 2-4.5 4.6-4.5s4.6 1.9 4.6 4.5"/><path d="M2 19.6c0-2.1 1.4-3.6 3.2-3.6"/><path d="M22 19.6c0-2.1-1.4-3.6-3.2-3.6"/></g>
+  <g id="i-gov"><path d="M3.5 9.6 12 4.4l8.5 5.2"/><path d="M5.5 10.6V18M10 10.6V18M14 10.6V18M18.5 10.6V18"/><path d="M3.5 20.6h17"/></g>
+  <g id="i-teacher"><path d="M3 8.4 12 4.2l9 4.2-9 4.2Z"/><path d="M7 10.6v4.6c0 1.6 2.4 2.8 5 2.8s5-1.2 5-2.8v-4.6"/><path d="M21 8.4V14"/></g>
+  <g id="i-stetho"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M6 3H4.4M14 3h1.6"/><path d="M10 12v2.6a4.4 4.4 0 0 0 8.8 0V13"/><circle cx="18.8" cy="11" r="2"/></g>
+  <g id="i-house"><path d="M4 11.2 12 4l8 7.2"/><path d="M6 10.5V20h12v-9.5"/><path d="M10 20v-5h4v5"/></g>
+  <g id="i-shield"><path d="M12 3.2 19 6v5.5c0 4.4-3 7.4-7 9.3-4-1.9-7-4.9-7-9.3V6Z"/><path d="m9.2 12.1 2 2 3.6-3.9"/></g>
+  <g id="i-hands"><path d="M12 20.4S4.5 16 4.5 10.6A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7.5 2c0 5.4-7.5 9.8-7.5 9.8Z"/><path d="M12 8.6v11.8"/></g>
+  <g id="i-mic"><rect x="9.2" y="3" width="5.6" height="10.4" rx="2.8"/><path d="M5.6 11.6a6.4 6.4 0 0 0 12.8 0"/><path d="M12 18v3M8.8 21h6.4"/></g>
+  <g id="i-bowl"><path d="M4 12h16a8 8 0 0 1-16 0Z"/><path d="M3 20h18"/><path d="M9 8c0-1.5 1-2 1-3.2S9 3 9 3"/><path d="M14 8c0-1.5 1-2 1-3.2S14 3 14 3"/></g>
+  <g id="i-coin"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4v9.2"/><path d="M14.6 9.6c-.6-.8-1.6-1.2-2.7-1.2-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.8.4 2.9 1 2.9 2.2s-1.2 2-2.8 2c-1.2 0-2.2-.4-2.8-1.2"/></g>
+  <g id="i-map"><path d="M9.4 4.2 3.6 6.4v13.4l5.8-2.2 5.2 2.2 5.8-2.2V4.2l-5.8 2.2Z"/><path d="M9.4 4.2v13.4M14.6 6.4v13.4"/></g>
+  <g id="i-whistle"><path d="M3.4 11.4h9.2l3.4-3.4v9.2l-3.4-3.4H3.4z"/><circle cx="18.4" cy="12" r="2.6"/><path d="M6.2 14.6V18"/></g>
+  <g id="i-tree"><path d="M12 21v-3.6"/><path d="M12 3.4 6.2 12h11.6Z"/><path d="M12 8.6 4.8 17.6h14.4Z"/><path d="M8.6 21h6.8"/></g>
+  <g id="i-access"><circle cx="12" cy="4.2" r="2"/><path d="M9.6 8.4h4.8"/><path d="M12 8.4v6h4.4l2.2 6.2"/><circle cx="11" cy="16.6" r="4.4"/></g>
+  <g id="i-briefcase"><rect x="3" y="7.4" width="18" height="12.6" rx="2.2"/><path d="M9 7.4V5.6a1.8 1.8 0 0 1 1.8-1.8h2.4A1.8 1.8 0 0 1 15 5.6v1.8"/><path d="M3 12.6h18"/></g>
+  <g id="i-sprout"><path d="M12 21v-7.4"/><path d="M12 13.6C12 9.8 9.4 7.4 5.4 7.4c0 4 2.6 6.2 6.6 6.2Z"/><path d="M12 13.6c0-4.6 2.6-7.2 6.6-7.2 0 4.6-2.6 7.2-6.6 7.2Z"/><path d="M8.4 21h7.2"/></g>
+  <g id="i-chat"><path d="M4 5.4h16v10.4h-8.6L7 19.6v-3.8H4Z"/><path d="M8 9.4h8M8 12.2h5"/></g>
+  <g id="i-crown"><path d="M4 17.4 3 7.6l5 3.8L12 5l4 6.4 5-3.8-1 9.8Z"/><path d="M4.4 20.4h15.2"/></g>
+  <g id="i-check"><rect x="5" y="4.6" width="14" height="16.4" rx="2"/><path d="M9 4.6V3h6v1.6"/><path d="m8.6 13 2.4 2.4 4.6-4.8"/></g>
+  <g id="i-eye"><path d="M2.6 12S6.2 5.6 12 5.6 21.4 12 21.4 12 17.8 18.4 12 18.4 2.6 12 2.6 12Z"/><circle cx="12" cy="12" r="3"/></g>
+  <g id="i-radio"><rect x="3" y="8.4" width="18" height="12" rx="2.4"/><path d="m6.4 8.4 10-5"/><circle cx="15.6" cy="14.4" r="2.8"/><path d="M6.6 12.6h3.6M6.6 16.2h3.6"/></g>
+  <!-- new for Builsa North -->
+  <g id="i-star"><path d="m12 3.4 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9Z"/></g>
+  <g id="i-book"><path d="M12 6.6C10 5.1 7.2 4.6 3.6 4.8v13.6c3.6-.2 6.4.3 8.4 1.8 2-1.5 4.8-2 8.4-1.8V4.8c-3.6-.2-6.4.3-8.4 1.8Z"/><path d="M12 6.6v13.6"/></g>
+  <g id="i-ball"><circle cx="12" cy="12" r="8.4"/><path d="M3.9 10c3.6.9 6.6 3.6 7.8 10.3"/><path d="M20.1 14c-3.6-.9-6.6-3.6-7.8-10.3"/></g>
+  <g id="i-baby"><circle cx="12" cy="12.6" r="7.8"/><path d="M9.3 15.2c1.6 1.3 3.8 1.3 5.4 0"/><path d="M9.4 11.2h.01M14.6 11.2h.01" stroke-width="2.6"/><path d="M12 4.8c-1.8-.2-2.6 1.6-1.2 2.6"/></g>
+  <g id="i-blocks"><rect x="3.4" y="12.6" width="7.6" height="7.6" rx="1.4"/><rect x="13" y="12.6" width="7.6" height="7.6" rx="1.4"/><rect x="8.2" y="3.6" width="7.6" height="7.6" rx="1.4"/></g>
+  <g id="i-bag"><rect x="5" y="7.6" width="14" height="13" rx="3.2"/><path d="M9 7.6V6.2a3 3 0 0 1 6 0v1.4"/><path d="M8.6 13.6h6.8v3.6H8.6Z"/></g>
+  <g id="i-solar"><path d="M5.4 4.4h13.2l2.2 9H3.2Z"/><path d="M4.3 8.9h15.4M9.8 4.4l-.6 9M14.2 4.4l.6 9"/><path d="M12 13.4v5.2M8.2 20.6h7.6"/></g>
+  <g id="i-pot"><path d="M4.6 10.6h14.8v5.2a4 4 0 0 1-4 4H8.6a4 4 0 0 1-4-4Z"/><path d="M2.6 10.6h18.8"/><path d="M9.2 7.4c0-1.4 1-1.8 1-3.2M13.8 7.4c0-1.4 1-1.8 1-3.2"/></g>
+  <symbol id="epic-mark" viewBox="0 0 24 24"><path d="M12 2 2 12l10 10 10-10Z"/></symbol>
+</defs></svg>
+<div class="sheet"><div class="panel tight"><p class="kick">First, two big words</p><h2 class="t">Who makes the plan?</h2><div class="card"><h3>A District Assembly</h3><p>Imagine your neighbourhood as a huge team — the District Assembly is the coaches and leaders of that team. They fix roads, build schools, keep streets clean and keep everyone safe.</p></div><div class="card"><h3>A District Plan</h3><p>A giant map made by local leaders to make a town a much better place to live. It lists the biggest problems, then writes a step-by-step checklist for fixing them.</p></div><p class="kick" style="margin-top:1.4mm">Who is the plan for?</p><h2 class="t" style="font-size:13pt">Every boy and girl in Builsa North</h2><div class="row"><div class="disc" style="background:#D14D8A"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-baby"/></svg></div><div><h4>Our littlest ones, aged 0–3</h4><p>Babies and toddlers who need a safe place to play.</p></div></div><div class="row"><div class="disc" style="background:#7A55B8"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></div><div><h4>Children with special abilities</h4><p>Kids who need a little extra help to join in.</p></div></div><div class="row"><div class="disc" style="background:#A97810"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bag"/></svg></div><div><h4>Children starting school</h4><p>Boys and girls getting ready for day one.</p></div></div><div class="row"><div class="disc" style="background:#E8734B"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-family"/></svg></div><div><h4>Families &amp; caregivers</h4><p>The grown-ups who love and look after them.</p></div></div><p class="kick" style="margin-top:auto">An equal chance for every child to…</p><div class="dreams"><div class="goal"><div class="gd" style="background:#E8AC2A;color:var(--ink)"><svg width="3.8mm" height="3.8mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></div><b>Shine</b><span>superstars sparkle</span></div><div class="goal"><div class="gd" style="background:#7A55B8"><svg width="3.8mm" height="3.8mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-book"/></svg></div><b>Learn</b><span>nursery to school</span></div><div class="goal"><div class="gd" style="background:#2B8FCB"><svg width="3.8mm" height="3.8mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ball"/></svg></div><b>Play</b><span>in safe, fun places</span></div><div class="goal"><div class="gd" style="background:#E8734B"><svg width="3.8mm" height="3.8mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></div><b>Be loved</b><span>by family and friends</span></div></div><div class="panelnum">Inside flap</div></div><div class="panel back"><p class="kick">Working together</p><h2 class="t">Our partners</h2><div class="logos"><img class="wide" src="ucl.png" alt="UCL"><img class="wide" src="nihr.png" alt="NIHR"><img src="logo_flacso.png" alt="FLACSO Argentina"><img class="wide" src="clcd-ghana-logo.jpeg" alt="CLCD — Center for Learning and Childhood Development"></div><p class="ack">This research was funded by the National Institute for Health and Care Research (NIHR) [NIHR158910] using UK international development funding from the UK Government to support global health research. The views expressed in this publication are those of the author(s) and not necessarily those of the NIHR or the UK government.</p><p class="kick" style="margin-top:2mm">Your turn</p><h2 class="t" style="font-size:13pt">What can you do?</h2><div class="row mid"><div class="disc" style="background:#2B8FCB"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hands"/></svg></div><div><h4>Invite every kid to play with you</h4></div></div><div class="row mid"><div class="disc" style="background:#4E9F45"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sprout"/></svg></div><div><h4>Eat your fresh fruit and vegetables</h4></div></div><div class="row mid"><div class="disc" style="background:#A97810"><svg width="4.4mm" height="4.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bag"/></svg></div><div><h4>Remind grown-ups: sign up for school on time!</h4></div></div><div class="srcbox"><p class="small"><b>Source:</b> Builsa North Municipal Assembly District Plan (Upper East Region) — child-friendly summary, prepared for the EPIC Project.</p><p class="small" style="margin:0">Six super powers so every child in Builsa North gets a happy, healthy and safe start in life.</p></div><div class="panelnum">Back cover</div></div><div class="panel cover"><svg class="sky" viewBox="0 -9 900 400" preserveAspectRatio="xMidYMax slice"
+       role="img" aria-label="Builsa North on a warm savannah afternoon — baobab trees, round thatched compound houses and a granary, a school flying the Ghana flag, the Municipal Assembly, a solar-powered garden and guinea fowl">
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F5DDB2"/><stop offset=".55" stop-color="#F9E8C8"/>
+        <stop offset=".84" stop-color="#F8D29C"/><stop offset="1" stop-color="#F2B676"/>
+      </linearGradient>
+      <radialGradient id="sunGlow">
+        <stop offset=".45" stop-color="#FFD27A" stop-opacity=".8"/>
+        <stop offset="1" stop-color="#FFD27A" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <!-- print covers are taller than the web header, so the afternoon sky carries on upward -->
+    <rect x="0" y="-9" width="900" height="10" fill="#F5DDB2"/>
+    <rect width="900" height="390" fill="url(#skyGrad)"/>
+
+    <!-- a big savannah sun, up and to the left of the title -->
+    <g id="skSun">
+      <circle id="sunHalo" cx="66" cy="92" r="62" fill="url(#sunGlow)"/>
+      <circle cx="66" cy="92" r="38" fill="#FFC94D"/>
+    </g>
+
+    <!-- thin streaks of harmattan haze -->
+    <g id="skClouds" fill="#fff" opacity=".7">
+      <g id="cloudA"><rect x="20" y="172" width="96" height="6" rx="3"/><rect x="52" y="182" width="70" height="5" rx="2.5"/></g>
+      <g id="cloudB"><rect x="770" y="118" width="104" height="6" rx="3"/><rect x="796" y="128" width="64" height="5" rx="2.5"/></g>
+    </g>
+
+    <!-- birds cross the sky; the title plate hides the middle of the pass -->
+    <g id="skBirds" fill="none" stroke="#5A4537" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(96,200) scale(0.9)"><path d="M0 0q6-6 12 0q6-6 12 0"/></g><g transform="translate(760,214) scale(1.05)"><path d="M0 0q6-6 12 0q6-6 12 0"/></g><g transform="translate(724,120) scale(0.78)"><path d="M0 0q6-6 12 0q6-6 12 0"/></g></g>
+
+    <!-- open savannah: a ridge of rocky outcrops, then a band of dry grass -->
+    <g id="skFar">
+      <path fill="#E8C391" d="M0 318C40 306 70 296 100 304S150 290 190 300 260 312 320 306 420 296 480 308 560 300 620 304 700 288 760 300 850 306 900 300V384H0Z"/>
+      <path fill="#D9A86E" d="M470 310c8-14 24-18 36-10s20 2 30 10Z"/><path fill="#D9A86E" d="M640 304c10-16 30-18 40-6 8-6 18-4 24 6Z"/>
+      <path fill="#C9B56A" d="M0 346C70 334 150 340 230 348S380 358 460 348 610 334 690 346 830 356 900 342V384H0Z"/>
+    </g>
+
+    <!-- Original silhouettes of a Builsa North village edge, drawn for this
+         poster standing on y=384. The warm #FCE6B0 shapes are openings. -->
+    <g id="skMid">
+      <g id="skMidGeom" fill="#4A2A1E">
+        <!-- a baobab at the western edge: a fat trunk and short stubby branches -->
+        <g id="treeL">
+          <path d="M20 384C25 350 23 322 28 300H54C59 322 57 350 62 384Z"/>
+          <path d="M31 302 16 280M41 300V270M51 302 68 282" fill="none" stroke="#4A2A1E" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="14" cy="276" r="11"/><circle cx="41" cy="264" r="13"/><circle cx="70" cy="278" r="11"/><circle cx="28" cy="270" r="8"/><circle cx="56" cy="268" r="8"/>
+        </g>
+        <!-- a Builsa compound: round mud houses under cone-shaped thatch, joined by a wall -->
+        <rect x="90" y="346" width="40" height="38" rx="3"/><path d="M83 348 110 314 137 348Z"/>
+        <rect x="108.6" y="308" width="2.8" height="8"/>
+        <path d="M103 384v-16a7 7 0 0 1 14 0v16Z" fill="#FCE6B0"/>
+        <rect x="128" y="362" width="76" height="22"/>
+        <rect x="142" y="352" width="32" height="32" rx="3"/><path d="M136 354 158 328 180 354Z"/>
+        <path d="M152 384v-12a6 6 0 0 1 12 0v12Z" fill="#FCE6B0"/>
+        <!-- the granary, raised up off the ground -->
+        <rect x="203" y="364" width="3" height="20"/><rect x="223" y="364" width="3" height="20"/>
+        <rect x="199" y="334" width="31" height="32" rx="7"/><path d="M194 337 214.5 314 235 337Z"/>
+        <rect x="244" y="350" width="36" height="34" rx="3"/><path d="M237 352 262 322 287 352Z"/>
+        <rect x="260.6" y="316" width="2.8" height="8"/>
+        <path d="M256 384v-13a6 6 0 0 1 12 0v13Z" fill="#FCE6B0"/>
+        <!-- the school, with its flagpole -->
+        <rect x="304" y="346" width="84" height="38"/><path d="M298 348 314 332H378L394 348Z"/>
+        <rect x="311" y="354" width="10" height="11" fill="#FCE6B0"/><rect x="327" y="354" width="10" height="11" fill="#FCE6B0"/>
+        <rect x="355" y="354" width="10" height="11" fill="#FCE6B0"/><rect x="371" y="354" width="10" height="11" fill="#FCE6B0"/>
+        <path d="M340 384v-15a6 6 0 0 1 12 0v15Z" fill="#FCE6B0"/>
+        <rect x="400" y="290" width="2.6" height="94"/>
+        <!-- Builsa North Municipal Assembly: a long block with a raised porch -->
+        <rect x="420" y="340" width="140" height="44"/><rect x="414" y="334" width="152" height="7"/>
+        <rect x="466" y="318" width="48" height="18"/><rect x="460" y="312" width="60" height="7"/>
+        <rect x="428" y="348" width="10" height="12" fill="#FCE6B0"/><rect x="445" y="348" width="10" height="12" fill="#FCE6B0"/>
+        <rect x="525" y="348" width="10" height="12" fill="#FCE6B0"/><rect x="542" y="348" width="10" height="12" fill="#FCE6B0"/>
+        <rect x="428" y="366" width="10" height="12" fill="#FCE6B0"/><rect x="445" y="366" width="10" height="12" fill="#FCE6B0"/>
+        <rect x="525" y="366" width="10" height="12" fill="#FCE6B0"/><rect x="542" y="366" width="10" height="12" fill="#FCE6B0"/>
+        <path d="M472 384v-36h36v36Z" fill="#FCE6B0"/><rect x="480" y="348" width="3" height="36"/><rect x="497" y="348" width="3" height="36"/>
+        <rect x="474" y="322" width="32" height="8" rx="2" fill="#FCE6B0"/>
+        <!-- a solar-powered garden: two panels on posts over rows of green -->
+        <rect x="596" y="352" width="3" height="32"/><rect x="616" y="348" width="3" height="36"/>
+        <path d="M582 352 626 340 632 356 588 368Z"/>
+        <rect x="656" y="350" width="3" height="34"/><rect x="676" y="346" width="3" height="38"/>
+        <path d="M642 350 686 338 692 354 648 366Z"/>
+        <g id="solarGlint" fill="none" stroke="#FCE6B0" stroke-width="1.4" stroke-linecap="round" opacity=".55">
+          <path d="M597 348 603 364M612 344 618 360M585 360 629 348"/>
+          <path d="M657 346 663 362M672 342 678 358M645 358 689 346"/>
+        </g>
+        <path d="M580 384c2-8 8-8 10 0M598 384c2-9 9-9 11 0M618 384c2-8 8-8 10 0M638 384c2-9 9-9 11 0M658 384c2-8 8-8 10 0M678 384c2-9 9-9 11 0"/>
+        <!-- guinea fowl pecking about -->
+        <g id="fowlA" transform="translate(718,366)">
+          <ellipse cx="12" cy="9" rx="12" ry="8.5"/><path d="M1 8 -2 3 3 4Z"/>
+          <g id="fowlHeadA"><path d="M21 6 26 -3" fill="none" stroke="#4A2A1E" stroke-width="3" stroke-linecap="round"/><circle cx="26.5" cy="-4" r="3.6"/><path d="M29.5 -4.8 33 -3.4 29.5 -2.2Z"/></g>
+          <rect x="8" y="16" width="2" height="6"/><rect x="14" y="16" width="2" height="6"/>
+          <circle cx="7" cy="7" r="1.1" fill="#FCE6B0"/><circle cx="12" cy="5" r="1.1" fill="#FCE6B0"/><circle cx="16" cy="9" r="1.1" fill="#FCE6B0"/><circle cx="10" cy="11" r="1.1" fill="#FCE6B0"/>
+        </g>
+        <g id="fowlB" transform="translate(782,370) scale(-.82,.82)">
+          <ellipse cx="12" cy="9" rx="12" ry="8.5"/><path d="M1 8 -2 3 3 4Z"/>
+          <g id="fowlHeadB"><path d="M21 6 26 -3" fill="none" stroke="#4A2A1E" stroke-width="3" stroke-linecap="round"/><circle cx="26.5" cy="-4" r="3.6"/><path d="M29.5 -4.8 33 -3.4 29.5 -2.2Z"/></g>
+          <rect x="8" y="16" width="2" height="6"/><rect x="14" y="16" width="2" height="6"/>
+          <circle cx="7" cy="7" r="1.1" fill="#FCE6B0"/><circle cx="12" cy="5" r="1.1" fill="#FCE6B0"/><circle cx="16" cy="9" r="1.1" fill="#FCE6B0"/>
+        </g>
+        <!-- more round houses at the eastern end -->
+        <rect x="790" y="350" width="38" height="34" rx="3"/><path d="M783 352 809 322 835 352Z"/>
+        <path d="M803 384v-13a6 6 0 0 1 12 0v13Z" fill="#FCE6B0"/>
+        <rect x="826" y="366" width="20" height="18"/>
+        <!-- a baobab at the eastern edge -->
+        <g id="treeR">
+          <path d="M846 384C851 352 849 326 854 304H878C883 326 881 352 886 384Z"/>
+          <path d="M857 306 842 286M866 304V276M875 306 892 288" fill="none" stroke="#4A2A1E" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="840" cy="282" r="11"/><circle cx="866" cy="270" r="13"/><circle cx="894" cy="284" r="11"/><circle cx="881" cy="274" r="8"/>
+        </g>
+      </g>
+      <!-- Ghana's flag over the school -->
+      <g id="skFlag" transform="translate(402.6,291)">
+        <rect width="26" height="5.4" fill="#CE1126"/><rect y="5.4" width="26" height="5.4" fill="#FCD116"/><rect y="10.8" width="26" height="5.4" fill="#006B3F"/>
+        <path d="m13 5.9 1 2.1 2.3.2-1.7 1.5.5 2.2-2.1-1.2-2.1 1.2.5-2.2-1.7-1.5 2.3-.2Z" fill="#000"/>
+      </g>
+    </g>
+
+    <g id="skNear" fill="#2B1F18"><rect x="0" y="384" width="900" height="7"/></g>
+  </svg><div class="body"><div class="sign"><h1>Builsa North's<br>Team Plan</h1><p>For our little<br>superstars!</p></div><p class="hook">Who decides how the schools, nurseries and play spaces in your town get better — and how can <b>you</b> help?</p><div class="teaser"><h4>Inside: 6 Super Powers</h4><div><i style="background:#E8734B"></i>Happy &amp; Helpful Families</div><div><i style="background:#D14D8A"></i>A Brand-New Nursery for Little Ones</div><div><i style="background:#2B8FCB"></i>Safe Spaces to Play and Grow</div><div><i style="background:#7A55B8"></i>Awesome Classrooms for Everyone</div><div><i style="background:#4E9F45"></i>Strong Bodies &amp; Fresh Food</div><div><i style="background:#E8AC2A"></i>Ready for School on Day One!</div></div><div class="coverfoot"><img src="epic-logo-2.svg" alt="EPIC"><span>CHILD-FRIENDLY<br>EDITION</span></div></div><div class="panelnum">Front cover</div></div></div>
+<div class="sheet"><div class="panel"><p class="kick">Understanding the plan</p><h2 class="t">Our 6 Super Powers</h2><p>Builsa North's leaders are focusing on six priority areas — every one points back at the same thing: <b>every child in Builsa North</b>.</p><div class="zone"><div class="zhead"><div class="znum" style="background:#E8734B;color:#fff">1</div><div class="zdisc" style="background:#C2512D"><svg width="5mm" height="5mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-family"/></svg></div><div class="zt"><h3>Happy &amp; Helpful Families</h3><span style="color:#C2512D">Better parenting</span></div></div><p class="zlede">Love and great tips make every home a happy home!</p><ul class="acts"><li style="color:#C2512D"><b>Trusted helpers —</b> chiefs, community leaders and local heroes share tips on showing children love and support.</li><li style="color:#C2512D"><b>Friendly chat spots —</b> helpful stories at durbars, churches, mosques, on the radio and at local gatherings.</li></ul><div class="team"><span class="chip"><i style="background:#E8734B"><svg width="3.4mm" height="3.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><use href="#i-people"/></svg></i>Community durbars</span><span class="chip"><i style="background:#7A55B8"><svg width="3.4mm" height="3.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></i>Churches &amp; mosques</span><span class="chip"><i style="background:#2E6B4F"><svg width="3.4mm" height="3.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><use href="#i-radio"/></svg></i>Radio shows</span><span class="chip"><i style="background:#B8472A"><svg width="3.4mm" height="3.4mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chat"/></svg></i>Local gatherings</span></div></div><div class="zone"><div class="zhead"><div class="znum" style="background:#D14D8A;color:#fff">2</div><div class="zdisc" style="background:#A9376E"><svg width="5mm" height="5mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-baby"/></svg></div><div class="zt"><h3>A Brand-New Nursery for Little Ones</h3><span style="color:#A9376E">Creche in public schools</span></div></div><p class="zlede">A safe, fun first classroom for our very youngest — ages 0 to 3!</p><ul class="acts"><li style="color:#A9376E"><b>Building a creche —</b> a safe, fun space inside public schools for children aged 0–3.</li><li style="color:#A9376E"><b>Super teachers —</b> training local teachers to care for and teach little toddlers.</li></ul></div><div class="panelnum">Inside 1</div></div><div class="panel spread"><div class="zone"><div class="zhead"><div class="znum" style="background:#2B8FCB;color:#fff">3</div><div class="zdisc" style="background:#1D72A6"><svg width="5mm" height="5mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></div><div class="zt"><h3>Safe Spaces to Play and Grow</h3><span style="color:#1D72A6">Safe environment</span></div></div><p class="zlede">Fun, safe places to explore — and a check-up so every child gets the help they need!</p><ul class="acts"><li style="color:#1D72A6"><b>5 zone learning centres —</b> a fun, safe centre in every zone to play, explore and learn.</li><li style="color:#1D72A6"><b>Health check-ups —</b> every year, early on, so extra help and disability support come right away.</li></ul></div><div class="zone"><div class="zhead"><div class="znum" style="background:#7A55B8;color:#fff">4</div><div class="zdisc" style="background:#5F3F99"><svg width="5mm" height="5mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-book"/></svg></div><div class="zt"><h3>Awesome Classrooms for Everyone</h3><span style="color:#5F3F99">Teaching &amp; learning tools</span></div></div><p class="zlede">Every child can roll, walk or run right into class!</p><ul class="acts"><li style="color:#5F3F99"><b>Easy access for all —</b> ramps and smooth paths for 10 kindergarten classrooms.</li><li style="color:#5F3F99"><b>Fun toys &amp; books —</b> exciting learning toys and books every child can use.</li></ul></div><div class="zone"><div class="zhead"><div class="znum" style="background:#4E9F45;color:#fff">5</div><div class="zdisc" style="background:#387F31"><svg width="5mm" height="5mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sprout"/></svg></div><div class="zt"><h3>Strong Bodies &amp; Fresh Food</h3><span style="color:#387F31">Better nutrition</span></div></div><p class="zlede">Fresh food grown with sunshine — even when it doesn't rain!</p><ul class="acts"><li style="color:#387F31"><b>Sun-powered farms —</b> 10 solar-powered gardens for fresh fruit and vegetables all year round.</li><li style="color:#387F31"><b>Tasty cooking shows —</b> yummy, healthy meals, and fresh food for school lunches.</li></ul></div><div class="panelnum">Inside 2</div></div><div class="panel last"><div class="zone"><div class="zhead"><div class="znum" style="background:#E8AC2A;color:var(--ink)">6</div><div class="zdisc" style="background:#A97810"><svg width="5mm" height="5mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bag"/></svg></div><div class="zt"><h3>Ready for School on Day One!</h3><span style="color:#A97810">Timely enrolment</span></div></div><p class="zlede">When the school year starts, every child is in class!</p><ul class="acts"><li style="color:#A97810"><b>Finding every child —</b> checking in with communities so no child gets left behind. <i>No child left behind!</i></li><li style="color:#A97810"><b>Radio &amp; community fun —</b> radio messages and visits so little ones are registered on time.</li></ul></div><div class="card" style="background:var(--cream-2)"><h3 style="font-size:9.6pt">The big idea</h3><p style="font-size:8.6pt">When families, chiefs, teachers and leaders work together as one big team, <b>every child in Builsa North gets the chance to shine.</b></p></div><div class="cheer"><h3>You are part of Builsa North's team!</h3><p>Builsa North is your home too. Every little superstar matters — including you.</p></div><div class="bigidea"><p style="font-weight:700;color:#fff;margin-bottom:2mm">You can't build a better Builsa North with one block.</p><p>Fresh food is great — but not if a child misses the first day of school. When all six super powers work together, <b>every child in Builsa North gets the chance to shine.</b></p></div><div class="panelnum">Inside 3</div></div></div>
+</body>
+</html>

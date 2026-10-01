@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Builsa North's Team Plan — Child-Friendly Version</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Builsa North palette — a sister to the Biakoye and Sunyani posters (same
+     layout and type), moved to the Upper East savannah: laterite, millet, clay */
+  --ink:#2B1F18; --ink-2:#5A4537; --ink-3:#8A7362;
+  --cream:#F8F1E2; --cream-2:#FDF9F0;
+  --haze:#F1E3CB;               /* harvest sand — the alternating band */
+  --skywash:#E7EED8;            /* pale sorghum green — the ring band */
+  --savanna:#2E6B4F; --sav-deep:#23573F;
+  --clay:#B8472A; --clay-2:#DE7B5A;
+  --marigold:#E9A23B; --sun:#FFC94D;
+  --night:#5A2B1C;              /* the title sign — laterite red-brown */
+  /* one colour per super power */
+  --z1:#E8734B; --z1d:#C2512D;  /* happy & helpful families */
+  --z2:#D14D8A; --z2d:#A9376E;  /* a brand-new nursery */
+  --z3:#2B8FCB; --z3d:#1D72A6;  /* safe spaces to play */
+  --z4:#7A55B8; --z4d:#5F3F99;  /* awesome classrooms */
+  --z5:#4E9F45; --z5d:#387F31;  /* strong bodies & fresh food */
+  --z6:#E8AC2A; --z6d:#A97810;  /* ready for school */
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --W:900px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{overflow-x:hidden}
+body{
+  background:var(--cream);
+  overflow-x:hidden;
+  font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  display:flex; justify-content:center;
+}
+#fit{width:var(--W)}
+.poster{width:var(--W);background:var(--cream);overflow:hidden;position:relative}
+
+/* ---------- shared type ---------- */
+.band{position:relative;padding:44px 56px}
+.band.tight{padding:36px 56px}
+h2.sec{
+  font-size:30px;font-weight:800;letter-spacing:-.4px;line-height:1.15;
+  margin:0 0 8px;text-align:center;
+}
+p.lede{
+  font-size:16px;line-height:1.5;font-weight:400;color:var(--ink-2);
+  margin:0 auto 26px;text-align:center;max-width:640px;
+}
+.kicker{
+  font-size:16px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
+  text-align:center;color:var(--savanna);margin:0 0 10px;
+}
+
+/* ---------- header ---------- */
+.hdr{background:#F6DDB4;padding:0;height:391px;position:relative}
+.hdr svg.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hdr .plate{position:absolute;top:24px;left:50%;transform:translateX(-50%);width:640px;text-align:center;z-index:2}
+.sign{
+  background:var(--night);border-radius:10px;padding:20px 26px 22px;
+  box-shadow:0 6px 0 rgba(0,0,0,.13);
+}
+.sign h1{
+  margin:0;color:#fff;font-size:44px;font-weight:800;line-height:1.02;letter-spacing:-1px;
+  text-shadow:0 2px 0 rgba(0,0,0,.12);
+}
+.sign .acr{
+  margin:9px 0 0;color:#FFD27A;font-size:13px;font-weight:600;letter-spacing:1.3px;
+  text-transform:uppercase;line-height:1.45;
+}
+.subplate{
+  margin:16px auto 0;background:var(--cream-2);border-radius:8px;padding:12px 22px;width:596px;
+  box-shadow:0 4px 0 rgba(0,0,0,.09);
+  display:flex;align-items:center;gap:18px;text-align:left;
+}
+.subplate p{margin:0;font-size:14.5px;font-weight:500;line-height:1.45;color:var(--ink-2)}
+.logo{display:block;color:#494949;object-fit:contain}
+.subplate .logo{flex:0 0 66px;width:66px;height:63px}
+.subplate .divider{flex:0 0 2px;align-self:stretch;background:var(--haze);border-radius:1px}
+
+/* ---------- fact strip ---------- */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fact{background:transparent;border-radius:14px;padding:20px 12px 18px;text-align:center}
+.fact .num{font-size:52px;font-weight:800;line-height:.92;letter-spacing:-2px;color:var(--ink)}
+.fact .lbl{margin-top:9px;font-size:11.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--clay);line-height:1.35}
+.fact .sub{margin-top:5px;font-size:11px;font-weight:400;color:var(--ink-3);line-height:1.35}
+.flags{display:flex;gap:6px;justify-content:center;margin-top:8px}
+
+/* ---------- two explainer cards ---------- */
+.explain{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.exp{background:var(--cream-2);border-radius:18px;padding:24px 24px 22px;box-shadow:0 3px 0 rgba(43,31,24,.09)}
+.exp .disc{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;color:#fff;margin-bottom:14px}
+.exp h3{margin:0 0 8px;font-size:19px;font-weight:800;line-height:1.2}
+.exp p{margin:0 0 9px;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+.exp p:last-child{margin-bottom:0}
+.exp p b{color:var(--ink)}
+
+/* ---------- goals / needs grids ---------- */
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.goal{background:#fff;border-radius:16px;padding:24px 20px 22px;text-align:center;box-shadow:0 3px 0 rgba(43,31,24,.09)}
+.goal .disc{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;color:#fff}
+.goal h3{margin:0 0 6px;font-size:17px;font-weight:800}
+.goal p{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.goal b{font-weight:700;color:var(--ink)}
+
+.needs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.need{
+  background:var(--cream-2);border-radius:16px;padding:20px 18px;
+  display:flex;gap:14px;align-items:flex-start;box-shadow:0 3px 0 rgba(43,31,24,.08);
+}
+.need .disc{
+  flex:0 0 46px;width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;color:#fff;
+}
+.need h3{margin:2px 0 4px;font-size:15px;font-weight:700;line-height:1.2}
+.need p{margin:0;font-size:12.5px;line-height:1.45;color:var(--ink-3)}
+
+/* ---------- ring ---------- */
+.ringwrap{position:relative}
+#ring{display:block;width:100%;height:auto;overflow:visible}
+.node-g{cursor:pointer}
+.node-c{transition:transform 220ms var(--ease-out)}
+.pill-bg{fill:#fff}
+.pill-t{font-size:12.5px;font-weight:700;fill:var(--ink)}
+.spoke{stroke-linecap:round;fill:none}
+.ring-cap{
+  margin:8px auto 0;max-width:640px;text-align:center;font-size:14px;line-height:1.5;
+  color:var(--ink-2);min-height:44px;font-weight:500;
+}
+.ring-cap b{font-weight:700;color:var(--ink)}
+
+/* ---------- zone blocks ---------- */
+.zhead{display:flex;align-items:center;gap:15px;max-width:640px;margin:0 auto 14px}
+.znum{
+  flex:0 0 56px;width:56px;height:56px;border-radius:17px;display:grid;place-items:center;
+  color:#fff;font-size:27px;font-weight:800;box-shadow:0 3px 0 rgba(43,31,24,.14);
+}
+.zdisc{flex:0 0 54px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.ztitle h3{margin:0;font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1.14}
+.ztitle p{margin:4px 0 0;font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase}
+.zlede{text-align:center;font-size:16.5px;font-weight:600;line-height:1.45;margin:0 auto 22px;max-width:620px;color:var(--ink-2)}
+.acts{display:grid;gap:14px}
+.acts.c2{grid-template-columns:repeat(2,1fr);max-width:700px;margin:0 auto}
+.acts.c3{grid-template-columns:repeat(3,1fr)}
+.actc{background:#fff;border-radius:16px;padding:17px 18px 16px;box-shadow:0 3px 0 rgba(43,31,24,.09);border-top:5px solid}
+.actc .disc{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;margin-bottom:11px}
+.actc h4{margin:0 0 5px;font-size:14.5px;font-weight:700;line-height:1.25}
+.actc p{margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-3)}
+.saying{
+  display:inline-block;margin-top:9px;background:var(--z1);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;
+  padding:4px 10px;border-radius:999px;
+}
+
+/* ---------- the big idea (savanna) ---------- */
+.you{background:var(--savanna);color:#fff}
+.you h2.sec{color:#fff}
+.you .kicker{color:#CDE6D6}
+.quote{
+  text-align:center;font-size:26px;font-weight:700;line-height:1.3;letter-spacing:-.3px;
+  max-width:720px;margin:0 auto 26px;
+}
+.quote em{font-style:normal;color:var(--sun)}
+.ypts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ypt{background:rgba(255,255,255,.13);border-radius:14px;padding:18px 20px;text-align:center}
+.ypt .disc{width:44px;height:44px;border-radius:50%;background:var(--sun);color:var(--ink);display:grid;place-items:center;margin:0 auto 11px}
+.ypt h4{margin:0 0 5px;font-size:14.5px;font-weight:700}
+.ypt p{margin:0;font-size:12.5px;line-height:1.45;color:#DCEDE2}
+
+/* ---------- city (three.js) ---------- */
+.big{background:var(--ink);color:#fff;padding:44px 56px 30px;position:relative;overflow:hidden}
+.big h2.sec{color:#fff}
+.big p.lede{color:#C8B6A6}
+.cityscape{position:relative;height:340px;margin:0 -16px}
+#city3d{position:absolute;inset:0;width:100%;height:100%;display:block}
+#cityFallback{position:absolute;inset:0;width:100%;height:100%}
+.blocklegend{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;margin-top:6px}
+.blocklegend span{font-size:11px;font-weight:600;color:#D2C2B3;display:flex;align-items:center;gap:6px}
+.blocklegend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.bigline{
+  text-align:center;font-size:17px;line-height:1.5;font-weight:500;color:#E6D9CC;
+  max-width:680px;margin:14px auto 0;
+}
+.bigline b{color:var(--sun);font-weight:700}
+
+/* ---------- cta ---------- */
+.cta{background:var(--clay);color:#fff;text-align:center;padding:40px 56px 36px;position:relative;overflow:hidden}
+.cta h2{margin:0 0 8px;font-size:38px;font-weight:800;line-height:1.08;letter-spacing:-1px;text-shadow:0 2px 0 rgba(0,0,0,.1)}
+.cta .sub{margin:0;font-size:18px;font-weight:600;color:#FFDCCB}
+
+/* ---------- partners ---------- */
+/* One white plate rather than four tiles. The four files ship with very
+   different amounts of baked-in padding (NIHR is ~80% whitespace vertically,
+   CLCD ~64%) and very different lockups (an 8.7:1 wordmark beside 1:1 marks),
+   so any equal-tile grid renders some logos at a third the optical size of
+   others. Each logo instead sits in a box clipped to its own artwork and sized
+   so every mark lands at a comparable ink height. */
+.funding{
+  max-width:706px;margin:20px auto 0;text-align:center;
+  font-size:11px;line-height:1.65;color:var(--ink-3);
+}
+.partners{
+  background:#fff;border-radius:16px;box-shadow:0 3px 0 rgba(43,31,24,.09);
+  padding:24px 30px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+/* absolute centring, not grid place-items: once the image is wider than its
+   box the grid column sizes to max-content and the crop falls off the left */
+.plogo{position:relative;overflow:hidden;flex:0 0 auto;display:block}
+.plogo img{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  display:block;width:auto;max-width:none;
+}
+.p-ucl   {width:143px;height:42px}  .p-ucl    img{height:42px}
+.p-nihr  {width:200px;height:23px}  .p-nihr   img{height:116px}
+.p-flacso{width:42px; height:62px}  .p-flacso img{height:63px}
+.p-clcd  {width:145px;height:70px}  .p-clcd   img{height:70px}
+
+/* ---------- source ---------- */
+.src{background:#fff;padding:16px 56px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.src p{margin:0;font-size:10.5px;line-height:1.5;color:var(--ink-3)}
+.src b{color:var(--ink-2);font-weight:700}
+.badge{flex:0 0 auto;display:flex;align-items:center;gap:12px;border:2px solid var(--haze);border-radius:10px;padding:9px 15px}
+.badge .logo{width:113px;height:107px}
+.badge span{font-size:10px;font-weight:800;letter-spacing:1.4px;line-height:1.3;color:var(--sav-deep)}
+
+/* ---------- big-word tooltips ---------- */
+.gloss{
+  position:relative;cursor:help;
+  border-bottom:2px dotted var(--clay);
+}
+.gloss::after,.gloss::before{
+  opacity:0;pointer-events:none;
+  transition:opacity 150ms var(--ease-out),transform 150ms var(--ease-out);
+}
+.gloss::after{
+  content:attr(data-tip);
+  position:absolute;left:50%;bottom:calc(100% + 12px);
+  transform:translateX(-50%) translateY(5px);
+  width:236px;
+  background:var(--ink);color:#fff;
+  font-family:'Poppins',system-ui,sans-serif;
+  font-size:12.5px;line-height:1.45;font-weight:500;font-style:normal;
+  text-align:left;text-transform:none;letter-spacing:0;
+  padding:10px 13px;border-radius:10px;
+  box-shadow:0 8px 22px rgba(43,31,24,.3);
+  z-index:60;
+}
+.gloss::before{
+  content:"";
+  position:absolute;left:50%;bottom:calc(100% + 6px);
+  transform:translateX(-50%) translateY(5px);
+  border:6px solid transparent;border-top-color:var(--ink);
+  z-index:61;
+}
+.gloss:hover::after,.gloss:hover::before,
+.gloss:focus::after,.gloss:focus::before{
+  opacity:1;transform:translateX(-50%) translateY(0);
+}
+.gloss:focus{outline:none}
+.gloss:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:3px}
+.you .gloss,.big .gloss{border-bottom-color:var(--sun)}
+
+/* ---------- motion ---------- */
+.reveal{opacity:0;transform:translateY(14px)}
+.shown{opacity:1;transform:none;transition:opacity 420ms var(--ease-out),transform 420ms var(--ease-out)}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none}
+  .shown{transition:none}
+}
+@media print{
+  body{background:#fff}
+  #fit{zoom:1!important}
+  .reveal{opacity:1!important;transform:none!important}
+  /* hover cannot happen on paper — drop the cue and the tooltip */
+  .gloss{border-bottom:none}
+  .gloss::after,.gloss::before{display:none}
+}
+
+/* four chances: shine, learn, play, be loved */
+.dreams4{grid-template-columns:repeat(4,1fr);gap:14px}
+.dreams4 .goal{padding:22px 14px 20px}
+.dreams4 .goal h3{font-size:18px}
+
+/* power 1 — the places where tips are shared */
+.team{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px auto 0;max-width:788px}
+.chip{
+  display:flex;align-items:center;gap:9px;background:#fff;border-radius:999px;
+  padding:7px 16px 7px 7px;box-shadow:0 3px 0 rgba(43,31,24,.09);
+  font-size:13px;font-weight:700;color:var(--ink);
+}
+.chip .disc{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:#fff}
+</style>
+</head>
+<body>
+
+<!-- ============ ICON LIBRARY — authored on a 24x24 grid ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-heart" transform="translate(0 -1)"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7 2.6C19 15.4 12 20 12 20Z"/></g>
+  <g id="i-child"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20.5c0-3.6 2.9-6.2 6.5-6.2s6.5 2.6 6.5 6.2"/></g>
+  <g id="i-family"><circle cx="8" cy="7.6" r="2.8"/><circle cx="16.6" cy="9" r="2.2"/><path d="M3.4 19.6c0-2.9 2.1-5 4.6-5s4.6 2.1 4.6 5"/><path d="M14 19.6c0-2.3 1.2-3.9 2.9-3.9s2.9 1.6 2.9 3.9"/></g>
+  <g id="i-people"><circle cx="12" cy="6.6" r="2.6"/><circle cx="5" cy="10.4" r="2.2"/><circle cx="19" cy="10.4" r="2.2"/><path d="M7.4 18.4c0-2.6 2-4.5 4.6-4.5s4.6 1.9 4.6 4.5"/><path d="M2 19.6c0-2.1 1.4-3.6 3.2-3.6"/><path d="M22 19.6c0-2.1-1.4-3.6-3.2-3.6"/></g>
+  <g id="i-gov"><path d="M3.5 9.6 12 4.4l8.5 5.2"/><path d="M5.5 10.6V18M10 10.6V18M14 10.6V18M18.5 10.6V18"/><path d="M3.5 20.6h17"/></g>
+  <g id="i-teacher"><path d="M3 8.4 12 4.2l9 4.2-9 4.2Z"/><path d="M7 10.6v4.6c0 1.6 2.4 2.8 5 2.8s5-1.2 5-2.8v-4.6"/><path d="M21 8.4V14"/></g>
+  <g id="i-stetho"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M6 3H4.4M14 3h1.6"/><path d="M10 12v2.6a4.4 4.4 0 0 0 8.8 0V13"/><circle cx="18.8" cy="11" r="2"/></g>
+  <g id="i-house"><path d="M4 11.2 12 4l8 7.2"/><path d="M6 10.5V20h12v-9.5"/><path d="M10 20v-5h4v5"/></g>
+  <g id="i-shield"><path d="M12 3.2 19 6v5.5c0 4.4-3 7.4-7 9.3-4-1.9-7-4.9-7-9.3V6Z"/><path d="m9.2 12.1 2 2 3.6-3.9"/></g>
+  <g id="i-hands"><path d="M12 20.4S4.5 16 4.5 10.6A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7.5 2c0 5.4-7.5 9.8-7.5 9.8Z"/><path d="M12 8.6v11.8"/></g>
+  <g id="i-mic"><rect x="9.2" y="3" width="5.6" height="10.4" rx="2.8"/><path d="M5.6 11.6a6.4 6.4 0 0 0 12.8 0"/><path d="M12 18v3M8.8 21h6.4"/></g>
+  <g id="i-bowl"><path d="M4 12h16a8 8 0 0 1-16 0Z"/><path d="M3 20h18"/><path d="M9 8c0-1.5 1-2 1-3.2S9 3 9 3"/><path d="M14 8c0-1.5 1-2 1-3.2S14 3 14 3"/></g>
+  <g id="i-coin"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4v9.2"/><path d="M14.6 9.6c-.6-.8-1.6-1.2-2.7-1.2-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.8.4 2.9 1 2.9 2.2s-1.2 2-2.8 2c-1.2 0-2.2-.4-2.8-1.2"/></g>
+  <g id="i-map"><path d="M9.4 4.2 3.6 6.4v13.4l5.8-2.2 5.2 2.2 5.8-2.2V4.2l-5.8 2.2Z"/><path d="M9.4 4.2v13.4M14.6 6.4v13.4"/></g>
+  <g id="i-whistle"><path d="M3.4 11.4h9.2l3.4-3.4v9.2l-3.4-3.4H3.4z"/><circle cx="18.4" cy="12" r="2.6"/><path d="M6.2 14.6V18"/></g>
+  <g id="i-tree"><path d="M12 21v-3.6"/><path d="M12 3.4 6.2 12h11.6Z"/><path d="M12 8.6 4.8 17.6h14.4Z"/><path d="M8.6 21h6.8"/></g>
+  <g id="i-access"><circle cx="12" cy="4.2" r="2"/><path d="M9.6 8.4h4.8"/><path d="M12 8.4v6h4.4l2.2 6.2"/><circle cx="11" cy="16.6" r="4.4"/></g>
+  <g id="i-briefcase"><rect x="3" y="7.4" width="18" height="12.6" rx="2.2"/><path d="M9 7.4V5.6a1.8 1.8 0 0 1 1.8-1.8h2.4A1.8 1.8 0 0 1 15 5.6v1.8"/><path d="M3 12.6h18"/></g>
+  <g id="i-sprout"><path d="M12 21v-7.4"/><path d="M12 13.6C12 9.8 9.4 7.4 5.4 7.4c0 4 2.6 6.2 6.6 6.2Z"/><path d="M12 13.6c0-4.6 2.6-7.2 6.6-7.2 0 4.6-2.6 7.2-6.6 7.2Z"/><path d="M8.4 21h7.2"/></g>
+  <g id="i-chat"><path d="M4 5.4h16v10.4h-8.6L7 19.6v-3.8H4Z"/><path d="M8 9.4h8M8 12.2h5"/></g>
+  <g id="i-crown"><path d="M4 17.4 3 7.6l5 3.8L12 5l4 6.4 5-3.8-1 9.8Z"/><path d="M4.4 20.4h15.2"/></g>
+  <g id="i-check"><rect x="5" y="4.6" width="14" height="16.4" rx="2"/><path d="M9 4.6V3h6v1.6"/><path d="m8.6 13 2.4 2.4 4.6-4.8"/></g>
+  <g id="i-eye"><path d="M2.6 12S6.2 5.6 12 5.6 21.4 12 21.4 12 17.8 18.4 12 18.4 2.6 12 2.6 12Z"/><circle cx="12" cy="12" r="3"/></g>
+  <g id="i-radio"><rect x="3" y="8.4" width="18" height="12" rx="2.4"/><path d="m6.4 8.4 10-5"/><circle cx="15.6" cy="14.4" r="2.8"/><path d="M6.6 12.6h3.6M6.6 16.2h3.6"/></g>
+  <!-- new for Builsa North -->
+  <g id="i-star"><path d="m12 3.4 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9Z"/></g>
+  <g id="i-book"><path d="M12 6.6C10 5.1 7.2 4.6 3.6 4.8v13.6c3.6-.2 6.4.3 8.4 1.8 2-1.5 4.8-2 8.4-1.8V4.8c-3.6-.2-6.4.3-8.4 1.8Z"/><path d="M12 6.6v13.6"/></g>
+  <g id="i-ball"><circle cx="12" cy="12" r="8.4"/><path d="M3.9 10c3.6.9 6.6 3.6 7.8 10.3"/><path d="M20.1 14c-3.6-.9-6.6-3.6-7.8-10.3"/></g>
+  <g id="i-baby"><circle cx="12" cy="12.6" r="7.8"/><path d="M9.3 15.2c1.6 1.3 3.8 1.3 5.4 0"/><path d="M9.4 11.2h.01M14.6 11.2h.01" stroke-width="2.6"/><path d="M12 4.8c-1.8-.2-2.6 1.6-1.2 2.6"/></g>
+  <g id="i-blocks"><rect x="3.4" y="12.6" width="7.6" height="7.6" rx="1.4"/><rect x="13" y="12.6" width="7.6" height="7.6" rx="1.4"/><rect x="8.2" y="3.6" width="7.6" height="7.6" rx="1.4"/></g>
+  <g id="i-bag"><rect x="5" y="7.6" width="14" height="13" rx="3.2"/><path d="M9 7.6V6.2a3 3 0 0 1 6 0v1.4"/><path d="M8.6 13.6h6.8v3.6H8.6Z"/></g>
+  <g id="i-solar"><path d="M5.4 4.4h13.2l2.2 9H3.2Z"/><path d="M4.3 8.9h15.4M9.8 4.4l-.6 9M14.2 4.4l.6 9"/><path d="M12 13.4v5.2M8.2 20.6h7.6"/></g>
+  <g id="i-pot"><path d="M4.6 10.6h14.8v5.2a4 4 0 0 1-4 4H8.6a4 4 0 0 1-4-4Z"/><path d="M2.6 10.6h18.8"/><path d="M9.2 7.4c0-1.4 1-1.8 1-3.2M13.8 7.4c0-1.4 1-1.8 1-3.2"/></g>
+  <symbol id="epic-mark" viewBox="0 0 24 24"><path d="M12 2 2 12l10 10 10-10Z"/></symbol>
+</defs></svg>
+
+<div id="fit"><div class="poster" id="poster">
+
+<!-- ============ HEADER ============ -->
+<header class="hdr">
+  <svg class="scene" viewBox="0 0 900 391" preserveAspectRatio="xMidYMax slice"
+       role="img" aria-label="Builsa North on a warm savannah afternoon — baobab trees, round thatched compound houses and a granary, a school flying the Ghana flag, the Municipal Assembly, a solar-powered garden and guinea fowl">
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F5DDB2"/><stop offset=".55" stop-color="#F9E8C8"/>
+        <stop offset=".84" stop-color="#F8D29C"/><stop offset="1" stop-color="#F2B676"/>
+      </linearGradient>
+      <radialGradient id="sunGlow">
+        <stop offset=".45" stop-color="#FFD27A" stop-opacity=".8"/>
+        <stop offset="1" stop-color="#FFD27A" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <rect width="900" height="390" fill="url(#skyGrad)"/>
+
+    <!-- a big savannah sun, up and to the left of the title -->
+    <g id="skSun">
+      <circle id="sunHalo" cx="66" cy="92" r="62" fill="url(#sunGlow)"/>
+      <circle cx="66" cy="92" r="38" fill="#FFC94D"/>
+    </g>
+
+    <!-- thin streaks of harmattan haze -->
+    <g id="skClouds" fill="#fff" opacity=".7">
+      <g id="cloudA"><rect x="20" y="172" width="96" height="6" rx="3"/><rect x="52" y="182" width="70" height="5" rx="2.5"/></g>
+      <g id="cloudB"><rect x="770" y="118" width="104" height="6" rx="3"/><rect x="796" y="128" width="64" height="5" rx="2.5"/></g>
+    </g>
+
+    <!-- birds cross the sky; the title plate hides the middle of the pass -->
+    <g id="skBirds" fill="none" stroke="#5A4537" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <g><path d="M0 0q6-6 12 0q6-6 12 0"/></g>
+      <g><path d="M0 0q6-6 12 0q6-6 12 0"/></g>
+      <g><path d="M0 0q6-6 12 0q6-6 12 0"/></g>
+    </g>
+
+    <!-- open savannah: a ridge of rocky outcrops, then a band of dry grass -->
+    <g id="skFar">
+      <path fill="#E8C391" d="M0 318C40 306 70 296 100 304S150 290 190 300 260 312 320 306 420 296 480 308 560 300 620 304 700 288 760 300 850 306 900 300V384H0Z"/>
+      <path fill="#D9A86E" d="M470 310c8-14 24-18 36-10s20 2 30 10Z"/><path fill="#D9A86E" d="M640 304c10-16 30-18 40-6 8-6 18-4 24 6Z"/>
+      <path fill="#C9B56A" d="M0 346C70 334 150 340 230 348S380 358 460 348 610 334 690 346 830 356 900 342V384H0Z"/>
+    </g>
+
+    <!-- Original silhouettes of a Builsa North village edge, drawn for this
+         poster standing on y=384. The warm #FCE6B0 shapes are openings. -->
+    <g id="skMid">
+      <g id="skMidGeom" fill="#4A2A1E">
+        <!-- a baobab at the western edge: a fat trunk and short stubby branches -->
+        <g id="treeL">
+          <path d="M20 384C25 350 23 322 28 300H54C59 322 57 350 62 384Z"/>
+          <path d="M31 302 16 280M41 300V270M51 302 68 282" fill="none" stroke="#4A2A1E" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="14" cy="276" r="11"/><circle cx="41" cy="264" r="13"/><circle cx="70" cy="278" r="11"/><circle cx="28" cy="270" r="8"/><circle cx="56" cy="268" r="8"/>
+        </g>
+        <!-- a Builsa compound: round mud houses under cone-shaped thatch, joined by a wall -->
+        <rect x="90" y="346" width="40" height="38" rx="3"/><path d="M83 348 110 314 137 348Z"/>
+        <rect x="108.6" y="308" width="2.8" height="8"/>
+        <path d="M103 384v-16a7 7 0 0 1 14 0v16Z" fill="#FCE6B0"/>
+        <rect x="128" y="362" width="76" height="22"/>
+        <rect x="142" y="352" width="32" height="32" rx="3"/><path d="M136 354 158 328 180 354Z"/>
+        <path d="M152 384v-12a6 6 0 0 1 12 0v12Z" fill="#FCE6B0"/>
+        <!-- the granary, raised up off the ground -->
+        <rect x="203" y="364" width="3" height="20"/><rect x="223" y="364" width="3" height="20"/>
+        <rect x="199" y="334" width="31" height="32" rx="7"/><path d="M194 337 214.5 314 235 337Z"/>
+        <rect x="244" y="350" width="36" height="34" rx="3"/><path d="M237 352 262 322 287 352Z"/>
+        <rect x="260.6" y="316" width="2.8" height="8"/>
+        <path d="M256 384v-13a6 6 0 0 1 12 0v13Z" fill="#FCE6B0"/>
+        <!-- the school, with its flagpole -->
+        <rect x="304" y="346" width="84" height="38"/><path d="M298 348 314 332H378L394 348Z"/>
+        <rect x="311" y="354" width="10" height="11" fill="#FCE6B0"/><rect x="327" y="354" width="10" height="11" fill="#FCE6B0"/>
+        <rect x="355" y="354" width="10" height="11" fill="#FCE6B0"/><rect x="371" y="354" width="10" height="11" fill="#FCE6B0"/>
+        <path d="M340 384v-15a6 6 0 0 1 12 0v15Z" fill="#FCE6B0"/>
+        <rect x="400" y="290" width="2.6" height="94"/>
+        <!-- Builsa North Municipal Assembly: a long block with a raised porch -->
+        <rect x="420" y="340" width="140" height="44"/><rect x="414" y="334" width="152" height="7"/>
+        <rect x="466" y="318" width="48" height="18"/><rect x="460" y="312" width="60" height="7"/>
+        <rect x="428" y="348" width="10" height="12" fill="#FCE6B0"/><rect x="445" y="348" width="10" height="12" fill="#FCE6B0"/>
+        <rect x="525" y="348" width="10" height="12" fill="#FCE6B0"/><rect x="542" y="348" width="10" height="12" fill="#FCE6B0"/>
+        <rect x="428" y="366" width="10" height="12" fill="#FCE6B0"/><rect x="445" y="366" width="10" height="12" fill="#FCE6B0"/>
+        <rect x="525" y="366" width="10" height="12" fill="#FCE6B0"/><rect x="542" y="366" width="10" height="12" fill="#FCE6B0"/>
+        <path d="M472 384v-36h36v36Z" fill="#FCE6B0"/><rect x="480" y="348" width="3" height="36"/><rect x="497" y="348" width="3" height="36"/>
+        <rect x="474" y="322" width="32" height="8" rx="2" fill="#FCE6B0"/>
+        <!-- a solar-powered garden: two panels on posts over rows of green -->
+        <rect x="596" y="352" width="3" height="32"/><rect x="616" y="348" width="3" height="36"/>
+        <path d="M582 352 626 340 632 356 588 368Z"/>
+        <rect x="656" y="350" width="3" height="34"/><rect x="676" y="346" width="3" height="38"/>
+        <path d="M642 350 686 338 692 354 648 366Z"/>
+        <g id="solarGlint" fill="none" stroke="#FCE6B0" stroke-width="1.4" stroke-linecap="round" opacity=".55">
+          <path d="M597 348 603 364M612 344 618 360M585 360 629 348"/>
+          <path d="M657 346 663 362M672 342 678 358M645 358 689 346"/>
+        </g>
+        <path d="M580 384c2-8 8-8 10 0M598 384c2-9 9-9 11 0M618 384c2-8 8-8 10 0M638 384c2-9 9-9 11 0M658 384c2-8 8-8 10 0M678 384c2-9 9-9 11 0"/>
+        <!-- guinea fowl pecking about -->
+        <g id="fowlA" transform="translate(718,366)">
+          <ellipse cx="12" cy="9" rx="12" ry="8.5"/><path d="M1 8 -2 3 3 4Z"/>
+          <g id="fowlHeadA"><path d="M21 6 26 -3" fill="none" stroke="#4A2A1E" stroke-width="3" stroke-linecap="round"/><circle cx="26.5" cy="-4" r="3.6"/><path d="M29.5 -4.8 33 -3.4 29.5 -2.2Z"/></g>
+          <rect x="8" y="16" width="2" height="6"/><rect x="14" y="16" width="2" height="6"/>
+          <circle cx="7" cy="7" r="1.1" fill="#FCE6B0"/><circle cx="12" cy="5" r="1.1" fill="#FCE6B0"/><circle cx="16" cy="9" r="1.1" fill="#FCE6B0"/><circle cx="10" cy="11" r="1.1" fill="#FCE6B0"/>
+        </g>
+        <g id="fowlB" transform="translate(782,370) scale(-.82,.82)">
+          <ellipse cx="12" cy="9" rx="12" ry="8.5"/><path d="M1 8 -2 3 3 4Z"/>
+          <g id="fowlHeadB"><path d="M21 6 26 -3" fill="none" stroke="#4A2A1E" stroke-width="3" stroke-linecap="round"/><circle cx="26.5" cy="-4" r="3.6"/><path d="M29.5 -4.8 33 -3.4 29.5 -2.2Z"/></g>
+          <rect x="8" y="16" width="2" height="6"/><rect x="14" y="16" width="2" height="6"/>
+          <circle cx="7" cy="7" r="1.1" fill="#FCE6B0"/><circle cx="12" cy="5" r="1.1" fill="#FCE6B0"/><circle cx="16" cy="9" r="1.1" fill="#FCE6B0"/>
+        </g>
+        <!-- more round houses at the eastern end -->
+        <rect x="790" y="350" width="38" height="34" rx="3"/><path d="M783 352 809 322 835 352Z"/>
+        <path d="M803 384v-13a6 6 0 0 1 12 0v13Z" fill="#FCE6B0"/>
+        <rect x="826" y="366" width="20" height="18"/>
+        <!-- a baobab at the eastern edge -->
+        <g id="treeR">
+          <path d="M846 384C851 352 849 326 854 304H878C883 326 881 352 886 384Z"/>
+          <path d="M857 306 842 286M866 304V276M875 306 892 288" fill="none" stroke="#4A2A1E" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="840" cy="282" r="11"/><circle cx="866" cy="270" r="13"/><circle cx="894" cy="284" r="11"/><circle cx="881" cy="274" r="8"/>
+        </g>
+      </g>
+      <!-- Ghana's flag over the school -->
+      <g id="skFlag" transform="translate(402.6,291)">
+        <rect width="26" height="5.4" fill="#CE1126"/><rect y="5.4" width="26" height="5.4" fill="#FCD116"/><rect y="10.8" width="26" height="5.4" fill="#006B3F"/>
+        <path d="m13 5.9 1 2.1 2.3.2-1.7 1.5.5 2.2-2.1-1.2-2.1 1.2.5-2.2-1.7-1.5 2.3-.2Z" fill="#000"/>
+      </g>
+    </g>
+
+    <g id="skNear" fill="#2B1F18"><rect x="0" y="384" width="900" height="7"/></g>
+  </svg>
+  <div class="plate">
+    <div class="sign">
+      <h1>Builsa North's Team Plan</h1>
+      <p class="acr">For our little superstars!</p>
+    </div>
+    <div class="subplate">
+      <img class="logo" src="epic-logo-2.svg" alt="EPIC">
+      <div class="divider"></div>
+      <p>Have you ever wondered who decides how the schools, nurseries and play spaces in your town get better — and how <b>you</b> can help?</p>
+    </div>
+  </div>
+</header>
+
+<!-- ============ OPENING LEDE ============ -->
+<section class="band tight" style="background:var(--cream);padding-bottom:10px">
+  <p class="lede" style="margin-bottom:0">Every single child in Builsa North deserves a <b>happy, healthy and safe start in life!</b> The <b><span class="gloss" tabindex="0" data-tip="The local government team in charge of Builsa North, with its offices in Sandema. A municipal assembly is the district assembly for a bigger town area.">Builsa North Municipal Assembly</span></b> in the <b><span class="gloss" tabindex="0" data-tip="Ghana is split into sixteen big areas called regions. The Upper East Region is in the far north-east of Ghana.">Upper East Region</span></b> made its very own <b>district plan</b> so every boy and girl — no matter where they live or what special abilities they have — can grow up strong, eat good food, play safely and go to school on time.</p>
+</section>
+
+<!-- ============ FACT STRIP ============ -->
+<section class="band tight" style="background:var(--cream)">
+  <div class="facts reveal">
+    <div class="fact">
+      <div class="num">6</div>
+      <div class="lbl">Super powers</div>
+      <div class="sub">Six big areas to work on</div>
+    </div>
+    <div class="fact">
+      <div class="num">1</div>
+      <div class="lbl">Team plan for Builsa North</div>
+      <div class="flags">
+        <svg width="30" height="20" viewBox="0 0 30 20" role="img" aria-label="Ghana">
+          <rect width="30" height="6.67" fill="#CE1126"/><rect y="6.67" width="30" height="6.67" fill="#FCD116"/><rect y="13.34" width="30" height="6.66" fill="#006B3F"/>
+          <path d="m15 7.4 1.1 2.3 2.5.3-1.9 1.7.5 2.5-2.2-1.3-2.2 1.3.5-2.5-1.9-1.7 2.5-.3Z" fill="#000"/>
+          <rect width="30" height="20" fill="none" stroke="rgba(0,0,0,.18)"/>
+        </svg>
+      </div>
+      <div class="sub" style="margin-top:5px">Sandema, Upper East Region</div>
+    </div>
+    <div class="fact">
+      <div class="num">10</div>
+      <div class="lbl">Solar-powered gardens</div>
+      <div class="sub">Fresh food all year long</div>
+    </div>
+    <div class="fact">
+      <div class="num">0</div>
+      <div class="lbl">Children left behind</div>
+      <div class="sub">Every little superstar matters</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TWO BIG WORDS EXPLAINED ============ -->
+<section class="band" style="background:var(--haze)">
+  <p class="kicker">First, two big words</p>
+  <h2 class="sec">Who makes the plan — and what is it?</h2>
+  <p class="lede">Grown-ups use some tricky words for this. Here is what they actually mean.</p>
+  <div class="explain reveal">
+    <div class="exp">
+      <div class="disc" style="background:var(--savanna)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-whistle"/></svg></div>
+      <h3>What is a District Assembly?</h3>
+      <p>Imagine your neighbourhood as a huge team — the <b>District Assembly</b> is like the coaches and leaders of that team!</p>
+      <p>They are the <span class="gloss" tabindex="0" data-tip="The leaders in charge of your own district, rather than the whole country.">local government</span> people whose job is to take care of the town: fix roads, build schools, keep streets clean, and make sure everyone stays safe and happy.</p>
+    </div>
+    <div class="exp">
+      <div class="disc" style="background:var(--clay)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-map"/></svg></div>
+      <h3>What is a District Plan?</h3>
+      <p>A <b>district plan</b> is like a giant map made by local leaders to make a town or city a much better place to live!</p>
+      <p>Instead of adults just guessing what to do, the plan lists the biggest problems — dirty streets, schools that need help, places that need safer parks — then writes a <b>step-by-step checklist</b> for fixing them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY THEY MADE THE PLAN ============ -->
+<section class="band" style="background:var(--cream)">
+  <p class="kicker">Why did they make the plan?</p>
+  <h2 class="sec">So every child gets an equal chance to…</h2>
+  <p class="lede">The plan aims to build a community where <b>every</b> child — every boy and every girl — gets the same chance to…</p>
+  <div class="goals dreams4 reveal">
+    <div class="goal">
+      <div class="disc" style="background:var(--z6);color:var(--ink)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></div>
+      <h3>Shine</h3>
+      <p>Every little superstar gets to sparkle.</p>
+    </div>
+    <div class="goal">
+      <div class="disc" style="background:var(--z4)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-book"/></svg></div>
+      <h3>Learn</h3>
+      <p>From nursery right through to school.</p>
+    </div>
+    <div class="goal">
+      <div class="disc" style="background:var(--z3)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ball"/></svg></div>
+      <h3>Play</h3>
+      <p>In safe, fun places to explore.</p>
+    </div>
+    <div class="goal">
+      <div class="disc" style="background:var(--z1)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></div>
+      <h3>Be loved</h3>
+      <p>By caring families and the whole community.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO IS IT FOR ============ -->
+<section class="band tight" style="background:var(--cream);padding-top:8px">
+  <p class="kicker">Who is the plan for?</p>
+  <h2 class="sec">Every boy and girl in Builsa North</h2>
+  <p class="lede">Everybody counts — wherever they live, and whatever special abilities they have.</p>
+  <div class="needs reveal">
+    <div class="need"><div class="disc" style="background:var(--z2)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-baby"/></svg></div><div><h3>Our littlest ones, aged 0–3</h3><p>Babies and toddlers who need a safe, fun place to learn and play.</p></div></div>
+    <div class="need"><div class="disc" style="background:var(--z4)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></div><div><h3>Children with special abilities</h3><p>Kids who use wheelchairs or leg braces, or who need a little extra help to join in.</p></div></div>
+    <div class="need"><div class="disc" style="background:var(--z6);color:var(--ink)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bag"/></svg></div><div><h3>Children starting school</h3><p>Boys and girls getting ready for their very first day in class.</p></div></div>
+    <div class="need"><div class="disc" style="background:var(--z1)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-family"/></svg></div><div><h3>Families &amp; caregivers</h3><p>The mums, dads and <span class="gloss" tabindex="0" data-tip="Anyone who looks after a child — like a grandma, an aunty, an uncle or a big sister.">caregivers</span> who love and look after every child.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ THE BIG IDEA (savanna) ============ -->
+<section class="band you">
+  <p class="kicker">The big idea</p>
+  <div class="quote">When families, chiefs, teachers and leaders<br>work together as one big team,<br><em>every child in Builsa North<br>gets the chance to shine.</em></div>
+  <div class="ypts reveal">
+    <div class="ypt"><div class="disc"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-child"/></svg></div><div><h4>Children</h4><p>You are the little superstars the whole plan is for — from tiny toddlers to brand-new pupils!</p></div></div>
+    <div class="ypt"><div class="disc"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-family"/></svg></div><div><h4>Families</h4><p>Mums, dads and caregivers pick up great tips on showing love and support, and cook yummy, healthy meals.</p></div></div>
+    <div class="ypt"><div class="disc"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-people"/></svg></div><div><h4>Communities</h4><p>Chiefs, community leaders, local heroes and teachers all help — at <span class="gloss" tabindex="0" data-tip="A big community gathering where chiefs, elders and everyone in town meet to talk, share news and celebrate.">durbars</span>, on the radio and in every zone.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ THE SIX SUPER POWERS RING (D3) ============ -->
+<section class="band" style="background:var(--skywash)">
+  <p class="kicker">Understanding the plan</p>
+  <h2 class="sec">Our 6 Super Powers</h2>
+  <p class="lede" style="margin-bottom:6px">To give every child a great start, Builsa North's leaders are focusing on six <span class="gloss" tabindex="0" data-tip="The things that matter most, so they get done first.">priority areas</span> — and every one of them points back at the same thing.</p>
+  <div class="ringwrap reveal">
+    <svg id="ring" viewBox="0 0 900 600" role="img" aria-label="Six Super Powers arranged around every child in Builsa North">
+      <circle cx="450" cy="300" r="180" fill="none" stroke="#B9CC9C" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+      <g id="spokes" stroke-width="4" stroke-linecap="round"></g>
+      <g id="nodes"></g>
+      <g id="hub">
+        <circle cx="450" cy="300" r="80" fill="#fff" opacity=".65"/>
+        <circle cx="450" cy="300" r="72" fill="#23573F"/>
+        <g transform="translate(433.8,264) scale(1.35)" fill="none" stroke="#FFFFFF" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+          <use href="#i-child"/>
+        </g>
+        <text x="450" y="314" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">EVERY CHILD</text>
+        <text x="450" y="330" text-anchor="middle" fill="#FFC94D" font-size="12.5" font-weight="700">IN BUILSA NORTH</text>
+      </g>
+    </svg>
+    <p class="ring-cap" id="ringCap"><b>Happy &amp; Helpful Families.</b> Chiefs, community leaders and local heroes share great tips on showing children love and support.</p>
+  </div>
+</section>
+
+<!-- ============ POWER 1 ============ -->
+<section class="band" style="background:var(--cream)">
+  <div class="zhead">
+    <div class="znum" style="background:var(--z1)">1</div>
+    <div class="zdisc" style="background:var(--z1d)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-family"/></svg></div>
+    <div class="ztitle"><h3>Happy &amp; Helpful Families</h3><p style="color:var(--z1d)">Better <span class="gloss" tabindex="0" data-tip="All the ways mums, dads and caregivers love, guide and look after their children.">parenting</span></p></div>
+  </div>
+  <p class="zlede">Love and great tips make every home a happy home!</p>
+  <div class="acts c2 reveal">
+    <div class="actc" style="border-top-color:var(--z1)">
+      <div class="disc" style="background:var(--z1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-crown"/></svg></div>
+      <h4>Trusted helpers</h4>
+      <p>Wise community leaders, chiefs and local heroes share great tips on how mums, dads and caregivers can show love and support to their children.</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--savanna)">
+      <div class="disc" style="background:var(--savanna)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chat"/></svg></div>
+      <h4>Friendly chat spots</h4>
+      <p>Sharing helpful stories at community <span class="gloss" tabindex="0" data-tip="A big community gathering where chiefs, elders and everyone in town meet to talk, share news and celebrate.">durbars</span>, churches, mosques, radio shows and local gatherings — so every family hears them!</p>
+    </div>
+  </div>
+  <div class="team reveal">
+    <span class="chip"><span class="disc" style="background:var(--z1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-people"/></svg></span>Community durbars</span>
+    <span class="chip"><span class="disc" style="background:var(--z4)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></span>Churches &amp; mosques</span>
+    <span class="chip"><span class="disc" style="background:var(--savanna)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-radio"/></svg></span>Radio shows</span>
+    <span class="chip"><span class="disc" style="background:var(--clay)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chat"/></svg></span>Local gatherings</span>
+  </div>
+</section>
+
+<!-- ============ POWER 2 ============ -->
+<section class="band" style="background:var(--haze)">
+  <div class="zhead">
+    <div class="znum" style="background:var(--z2)">2</div>
+    <div class="zdisc" style="background:var(--z2d)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-baby"/></svg></div>
+    <div class="ztitle"><h3>A Brand-New Nursery for Little Ones</h3><p style="color:var(--z2d)"><span class="gloss" tabindex="0" data-tip="A nursery where babies and toddlers are looked after, play and learn.">Creche</span> in public schools</p></div>
+  </div>
+  <p class="zlede">A safe, fun first classroom for our very youngest — ages 0 to 3!</p>
+  <div class="acts c2 reveal">
+    <div class="actc" style="border-top-color:var(--z2)">
+      <div class="disc" style="background:var(--z2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-blocks"/></svg></div>
+      <h4>Building a creche</h4>
+      <p>A safe, fun space right inside public schools, where our youngest children (ages 0–3) can learn and play!</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--marigold)">
+      <div class="disc" style="background:var(--z6d)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-teacher"/></svg></div>
+      <h4>Super teachers</h4>
+      <p>Training local teachers on the very best ways to care for and teach little <span class="gloss" tabindex="0" data-tip="Little children who have just learned to walk — usually between one and three years old.">toddlers</span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POWER 3 ============ -->
+<section class="band" style="background:var(--cream)">
+  <div class="zhead">
+    <div class="znum" style="background:var(--z3)">3</div>
+    <div class="zdisc" style="background:var(--z3d)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></div>
+    <div class="ztitle"><h3>Safe Spaces to Play and Grow</h3><p style="color:var(--z3d)">Safe <span class="gloss" tabindex="0" data-tip="Everything around us — the places we live, learn and play, and the air, water and land.">environment</span></p></div>
+  </div>
+  <p class="zlede">Fun, safe places to explore — and a check-up so every child gets the help they need!</p>
+  <div class="acts c2 reveal">
+    <div class="actc" style="border-top-color:var(--z3)">
+      <div class="disc" style="background:var(--z3)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-house"/></svg></div>
+      <h4>5 zone learning centres</h4>
+      <p>A fun, safe centre in every <span class="gloss" tabindex="0" data-tip="Builsa North is split into smaller areas called zones, so there is a centre in every part of the district.">zone</span>, where children can play, explore and learn.</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--z1)">
+      <div class="disc" style="background:var(--z1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-stetho"/></svg></div>
+      <h4>Health check-ups</h4>
+      <p>Checking children every year, starting early, so anyone who needs extra help or <span class="gloss" tabindex="0" data-tip="Extra help, tools or care for children whose bodies or brains work in their own way.">disability support</span> gets it right away!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POWER 4 ============ -->
+<section class="band" style="background:var(--haze)">
+  <div class="zhead">
+    <div class="znum" style="background:var(--z4)">4</div>
+    <div class="zdisc" style="background:var(--z4d)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-book"/></svg></div>
+    <div class="ztitle"><h3>Awesome Classrooms for Everyone</h3><p style="color:var(--z4d)">Teaching &amp; learning tools</p></div>
+  </div>
+  <p class="zlede">Every child can roll, walk or run right into class!</p>
+  <div class="acts c2 reveal">
+    <div class="actc" style="border-top-color:var(--z4)">
+      <div class="disc" style="background:var(--z4)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-access"/></svg></div>
+      <h4>Easy access for all</h4>
+      <p>Fixing up 10 <span class="gloss" tabindex="0" data-tip="The first classes at school, for children aged about four and five.">kindergarten</span> classrooms with <span class="gloss" tabindex="0" data-tip="A gentle slope instead of steps, so a wheelchair, a pram or wobbly legs can roll or walk right in.">ramps</span> and smooth paths, so children using wheelchairs or leg braces can join in easily.</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--z2)">
+      <div class="disc" style="background:var(--z2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-blocks"/></svg></div>
+      <h4>Fun toys &amp; books</h4>
+      <p>Filling classrooms with exciting learning toys and books that every child can use.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POWER 5 ============ -->
+<section class="band" style="background:var(--cream)">
+  <div class="zhead">
+    <div class="znum" style="background:var(--z5)">5</div>
+    <div class="zdisc" style="background:var(--z5d)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sprout"/></svg></div>
+    <div class="ztitle"><h3>Strong Bodies &amp; Fresh Food</h3><p style="color:var(--z5d)">Better <span class="gloss" tabindex="0" data-tip="The good stuff inside food that helps your body and your brain grow big and strong.">nutrition</span></p></div>
+  </div>
+  <p class="zlede">Fresh food grown with sunshine — even when it doesn't rain!</p>
+  <div class="acts c2 reveal">
+    <div class="actc" style="border-top-color:var(--z5)">
+      <div class="disc" style="background:var(--z5)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-solar"/></svg></div>
+      <h4>Sun-powered farms</h4>
+      <p>10 <span class="gloss" tabindex="0" data-tip="Using sunshine to make electricity. In a garden it can run a pump that brings water to the plants.">solar-powered</span> gardens across our communities, so families can grow fresh, healthy fruit and vegetables all year long — even when it doesn't rain!</p>
+    </div>
+    <div class="actc" style="border-top-color:var(--marigold)">
+      <div class="disc" style="background:var(--z6d)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-pot"/></svg></div>
+      <h4>Tasty cooking shows</h4>
+      <p>Showing families how to cook yummy, healthy meals — and sharing fresh food with <span class="gloss" tabindex="0" data-tip="Meals served at school, so children have the energy to learn.">school lunch programmes</span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POWER 6 ============ -->
+<section class="band" style="background:var(--haze)">
+  <div class="zhead">
+    <div class="znum" style="background:var(--z6);color:var(--ink)">6</div>
+    <div class="zdisc" style="background:var(--z6d)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bag"/></svg></div>
+    <div class="ztitle"><h3>Ready for School on Day One!</h3><p style="color:var(--z6d)">Timely <span class="gloss" tabindex="0" data-tip="Signing a child up for school, so they have a place in class when the school year begins.">enrolment</span></p></div>
+  </div>
+  <p class="zlede">When the school year starts, every child is in class!</p>
+  <div class="acts c2 reveal">
+    <div class="actc" style="border-top-color:var(--z6)">
+      <div class="disc" style="background:var(--z6d)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-eye"/></svg></div>
+      <h4>Finding every child</h4>
+      <p>Checking in with communities to make sure no child gets left behind when it's time to start school.</p>
+      <span class="saying" style="background:var(--z6);color:var(--ink)">No child left behind</span>
+    </div>
+    <div class="actc" style="border-top-color:var(--savanna)">
+      <div class="disc" style="background:var(--savanna)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-radio"/></svg></div>
+      <h4>Radio &amp; community fun</h4>
+      <p>Fun radio messages and community visits right before the school year starts, so parents get their little ones <span class="gloss" tabindex="0" data-tip="Written down on the school's list, so the school knows a child is coming.">registered</span> on time!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE TOWN (three.js) ============ -->
+<section class="big">
+  <p class="kicker" style="color:var(--sun)">Why six super powers and not one</p>
+  <h2 class="sec">You can't build a better Builsa North with one block</h2>
+  <p class="lede">Imagine building Builsa North out of giant toy blocks. Every colour is one of the six super powers — take a colour away and the whole town wobbles.</p>
+  <div class="cityscape">
+    <svg id="cityFallback" viewBox="0 0 900 340" aria-label="A town skyline built from coloured toy blocks, one colour for each super power">
+      <g id="fbBlocks"></g>
+    </svg>
+    <canvas id="city3d" aria-hidden="true" style="opacity:0"></canvas>
+  </div>
+  <div class="blocklegend" id="legend"></div>
+  <p class="bigline">Fresh food is great — but not if a child misses the first day of school. Ramps help — but not if little ones have nowhere safe to play. When all six super powers work together, <b>every child in Builsa North gets the chance to shine.</b></p>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.14" viewBox="0 0 900 230" aria-hidden="true">
+    <circle cx="90" cy="40" r="60" fill="#fff"/><circle cx="820" cy="190" r="80" fill="#fff"/><circle cx="740" cy="30" r="34" fill="#fff"/>
+  </svg>
+  <div style="position:relative">
+    <h2>You are part of Builsa North's team!</h2>
+    <p class="sub">Builsa North is your home too. Every little superstar matters — including you.</p>
+  </div>
+</section>
+
+<!-- ============ WHAT CAN YOU DO ============ -->
+<section class="band" style="background:var(--cream)">
+  <p class="kicker">Your turn</p>
+  <h2 class="sec">What can you do?</h2>
+  <div class="goals reveal" style="margin-top:24px">
+    <div class="goal"><div class="disc" style="background:var(--z3)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hands"/></svg></div><p style="font-size:15.5px"><b>Invite every kid to play with you</b></p></div>
+    <div class="goal"><div class="disc" style="background:var(--z5)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sprout"/></svg></div><p style="font-size:15.5px"><b>Eat your fresh fruit and vegetables</b></p></div>
+    <div class="goal"><div class="disc" style="background:var(--z6);color:var(--ink)"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bag"/></svg></div><p style="font-size:15.5px"><b>Remind grown-ups: sign up for school on time!</b></p></div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="band tight" style="background:var(--haze)">
+  <p class="kicker">Working together</p>
+  <h2 class="sec">Our partners</h2>
+  <p class="lede" style="margin-bottom:22px">These are the teams helping Builsa North turn the plan into happy families, safe spaces and full classrooms.</p>
+  <div class="partners reveal">
+    <span class="plogo p-ucl"><img src="ucl.png" alt="UCL — University College London"></span>
+    <span class="plogo p-nihr"><img src="nihr.png" alt="NIHR — National Institute for Health and Care Research"></span>
+    <span class="plogo p-flacso"><img src="logo_flacso.png" alt="FLACSO Argentina"></span>
+    <span class="plogo p-clcd"><img src="clcd-ghana-logo.jpeg" alt="CLCD — Center for Learning and Childhood Development"></span>
+  </div>
+  <p class="funding">This research was funded by the National Institute for Health and Care Research (NIHR) [NIHR158910] using UK international development funding from the UK Government to support global health research. The views expressed in this publication are those of the author(s) and not necessarily those of the NIHR or the UK government.</p>
+</section>
+
+<!-- ============ SOURCE ============ -->
+<footer class="src">
+  <p><b>Source:</b> Builsa North Municipal Assembly District Plan (Upper East Region) — child-friendly summary, prepared for the EPIC Project.<br>
+  A district plan built around six super powers so that every child in Builsa North gets a happy, healthy and safe start in life.</p>
+  <div class="badge">
+    <img class="logo" src="epic-logo-2.svg" alt="EPIC">
+    <span>CHILD-FRIENDLY<br>EDITION</span>
+  </div>
+</footer>
+
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+"use strict";
+var SVGNS = "http://www.w3.org/2000/svg";
+var REDUCE = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+function el(tag, attrs, parent){
+  var n = document.createElementNS(SVGNS, tag);
+  for (var k in attrs) n.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(n);
+  return n;
+}
+
+/* ---------------------------------------------------------------
+   1. THE SIX SUPER POWERS — a ring around every child
+   Geometry is rendered in plain DOM so the poster is complete
+   before any library loads; D3 then owns motion + interaction.
+---------------------------------------------------------------- */
+var CX = 450, CY = 300, R = 180, NODE_R = 52, HUB_R = 72;
+
+var ZONES = [
+  { key:"families", icon:"#i-family", color:"#E8734B", ink:"#fff",
+    pill:["Happy & Helpful","Families"], pw:156, px:450, py:36,
+    title:"Happy & Helpful Families.", short:"Happy Families",
+    blurb:"Chiefs, community leaders and local heroes share great tips on showing children love and support." },
+  { key:"nursery",  icon:"#i-baby",   color:"#D14D8A", ink:"#fff",
+    pill:["A Brand-New","Nursery"], pw:136, px:782, py:200,
+    title:"A Brand-New Nursery for Little Ones.", short:"New Nursery",
+    blurb:"A creche inside public schools for children aged 0–3, with teachers trained to care for toddlers." },
+  { key:"safe",     icon:"#i-shield", color:"#2B8FCB", ink:"#fff",
+    pill:["Safe Spaces to","Play and Grow"], pw:150, px:782, py:400,
+    title:"Safe Spaces to Play and Grow.", short:"Safe Spaces",
+    blurb:"A learning centre in each of the 5 zones, and yearly health check-ups so help comes early." },
+  { key:"class",    icon:"#i-book",   color:"#7A55B8", ink:"#fff",
+    pill:["Awesome Classrooms","for Everyone"], pw:180, px:450, py:566,
+    title:"Awesome Classrooms for Everyone.", short:"Awesome Classrooms",
+    blurb:"Ramps and smooth paths for 10 kindergarten classrooms, plus fun toys and books for every child." },
+  { key:"food",     icon:"#i-sprout", color:"#4E9F45", ink:"#fff",
+    pill:["Strong Bodies &","Fresh Food"], pw:156, px:118, py:400,
+    title:"Strong Bodies & Fresh Food.", short:"Fresh Food",
+    blurb:"10 solar-powered gardens for fresh food all year, and cooking shows for yummy, healthy meals." },
+  { key:"school",   icon:"#i-bag",    color:"#E8AC2A", ink:"#2B1F18",
+    pill:["Ready for School","on Day One!"], pw:160, px:118, py:200,
+    title:"Ready for School on Day One!", short:"Ready for School",
+    blurb:"Finding every child, plus radio messages and visits, so little ones are registered on time." }
+];
+
+(function buildRing(){
+  var spokes = document.getElementById("spokes");
+  var nodes  = document.getElementById("nodes");
+  if (!spokes || !nodes) return;
+
+  ZONES.forEach(function(d, i){
+    var a  = (-90 + i * (360 / ZONES.length)) * Math.PI / 180;
+    var co = Math.cos(a), si = Math.sin(a);
+    d.x = CX + R * co;
+    d.y = CY + R * si;
+
+    d.spoke = el("line", {
+      x1: CX + (HUB_R + 8) * co, y1: CY + (HUB_R + 8) * si,
+      x2: CX + (R - NODE_R - 4) * co, y2: CY + (R - NODE_R - 4) * si,
+      stroke: d.color, "stroke-opacity": .55, class: "spoke"
+    }, spokes);
+
+    var g = el("g", { class:"node-g", "data-key": d.key, tabindex: "0",
+                      role:"button", "aria-label": d.title.replace(/\.$/, "") }, nodes);
+    d.g = g;
+
+    el("circle", { cx:d.x, cy:d.y, r:NODE_R + 6, fill:"#fff", "fill-opacity":.55 }, g);
+    d.circle = el("circle", { cx:d.x, cy:d.y, r:NODE_R, fill:d.color, class:"node-c" }, g);
+
+    var ic = el("g", { transform:"translate(" + (d.x - 19.2) + "," + (d.y - 19.2) + ") scale(1.6)",
+                       fill:"none", stroke:d.ink, "stroke-width":1.5,
+                       "stroke-linecap":"round", "stroke-linejoin":"round",
+                       "pointer-events":"none" }, g);
+    var use = el("use", {}, ic);
+    use.setAttribute("href", d.icon);
+
+    // label pill, placed radially outside its node
+    var ph = d.pill.length > 1 ? 46 : 34;
+    el("rect", { x: d.px - d.pw / 2, y: d.py - ph / 2, width:d.pw, height:ph,
+                 rx: ph / 2, class:"pill-bg", "pointer-events":"none" }, g);
+    d.pill.forEach(function(line, li){
+      var t = el("text", {
+        x: d.px, y: d.py + (d.pill.length > 1 ? (li === 0 ? -3 : 14) : 4.5),
+        "text-anchor":"middle", class:"pill-t", "pointer-events":"none"
+      }, g);
+      t.textContent = line;
+    });
+  });
+})();
+
+/* ---------------------------------------------------------------
+   2. The block city — one colour per super power
+---------------------------------------------------------------- */
+var BRICK = ZONES.map(function(d){ return d.color; });
+var NZ = BRICK.length;
+
+function cityBlocks(){
+  var B = [];
+  var add = function(x, y, w, h, c){ B.push({ x:x, y:y, w:w, h:h, c:c }); };
+  // street-level course, right across the city
+  for (var i = -4; i <= 4; i++) add(i, 0, .96, .6, (i + 10) % NZ);
+  // towers, tallest in the middle
+  var TOWERS = [
+    { x:-3.9, h:4 }, { x:-2.95, h:2 }, { x:-1.95, h:5 }, { x:-.95, h:3 },
+    { x:0,    h:6 },
+    { x:.95,  h:3 }, { x:1.95, h:5 }, { x:2.95, h:2 }, { x:3.9, h:4 }
+  ];
+  TOWERS.forEach(function(t, k){
+    for (var r = 1; r <= t.h; r++) add(t.x, r, .86, .6, (k + r) % NZ);
+    add(t.x, t.h + 1, .42, .5, (k + t.h + 2) % NZ);   // rooftop cap
+  });
+  // Even the colours out by measurement: each pass moves one block from the
+  // most-used colour to the least-used one, choosing the candidate furthest
+  // from that colour's existing blocks so every power reads across the skyline.
+  for (var pass = 0; pass < 60; pass++){
+    var counts = [], c;
+    for (c = 0; c < NZ; c++) counts.push(0);
+    B.forEach(function(b){ counts[b.c]++; });
+    var lo = counts.indexOf(Math.min.apply(null, counts));
+    var hi = counts.indexOf(Math.max.apply(null, counts));
+    if (counts[hi] - counts[lo] <= 1) break;
+    var owned = B.filter(function(b){ return b.c === lo; });
+    var pick = null, far = -1;
+    B.forEach(function(b){
+      if (b.c !== hi) return;
+      var d = owned.length ? Math.min.apply(null, owned.map(function(q){
+        return Math.abs(q.x - b.x) + Math.abs(q.y - b.y);
+      })) : 1e9;
+      if (d > far){ far = d; pick = b; }
+    });
+    if (!pick) break;
+    pick.c = lo;
+  }
+  return B;
+}
+var BLOCKS = cityBlocks();
+
+(function fallbackCity(){          // always drawn; 3D fades in over it
+  var host = document.getElementById("fbBlocks");
+  if (!host) return;
+  var U = 58, ox = 450, oy = 318, STEP = U * .64;
+  BLOCKS.forEach(function(b){
+    el("rect", {
+      x: ox + b.x * U - b.w * U / 2, y: oy - (b.y + 1) * STEP,
+      width: b.w * U, height: b.h * U, rx: 5,
+      fill: BRICK[b.c], stroke:"rgba(255,255,255,.28)", "stroke-width":1.5
+    }, host);
+  });
+  // a little park in front of the city, and two trees standing in it
+  el("rect", { x: ox - 260, y: oy - 3, width: 520, height: 17, rx: 8, fill:"#2E7D4F" }, host);
+  [-100, 100].forEach(function(dx){
+    el("rect", { x: ox + dx - 3, y: oy - 26, width: 6, height: 30, rx: 3, fill:"#7A5233" }, host);
+    // a paler green than the zone-4 blocks, so a tree never reads as a block
+    el("circle", { cx: ox + dx, cy: oy - 34, r: 14, fill:"#9BDB8F" }, host);
+    el("circle", { cx: ox + dx - 10, cy: oy - 25, r: 9, fill:"#6CC07A" }, host);
+    el("circle", { cx: ox + dx + 10, cy: oy - 25, r: 9, fill:"#6CC07A" }, host);
+  });
+})();
+
+(function legend(){
+  var host = document.getElementById("legend");
+  if (!host) return;
+  ZONES.forEach(function(d, i){
+    var s = document.createElement("span");
+    s.innerHTML = '<i style="background:' + d.color + '"></i>' +
+                  (i + 1) + '. ' + d.short;
+    host.appendChild(s);
+  });
+})();
+
+/* ---------------------------------------------------------------
+   3. Reveal on scroll — 60ms stagger, opacity + 14px lift only
+---------------------------------------------------------------- */
+(function reveals(){
+  var items = [].slice.call(document.querySelectorAll(".reveal"));
+  if (REDUCE || !("IntersectionObserver" in window)){
+    items.forEach(function(n){ n.classList.add("shown"); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e, i){
+      if (!e.isIntersecting) return;
+      setTimeout(function(){ e.target.classList.add("shown"); }, i * 60);
+      io.unobserve(e.target);
+    });
+  }, { threshold:.15 });
+  items.forEach(function(n){ io.observe(n); });
+})();
+
+/* ---------------------------------------------------------------
+   0. The Builsa North header. The scene is complete static SVG —
+   D3 only adds the entrance and the ambient loop on top of it.
+---------------------------------------------------------------- */
+function withD3Skyline(d3){
+  if (d3.select("svg.scene").empty()) return;
+
+  var halo   = d3.select("#sunHalo");
+  var treeL  = d3.select("#treeL");
+  var treeR  = d3.select("#treeR");
+  var flag   = d3.select("#skFlag");
+  var headA  = d3.select("#fowlHeadA");
+  var headB  = d3.select("#fowlHeadB");
+  var glint  = d3.select("#solarGlint");
+  var cloudA = d3.select("#cloudA");
+  var cloudB = d3.select("#cloudB");
+  var birds  = d3.selectAll("#skBirds > g").nodes();
+
+  if (REDUCE){
+    // no loop to fly them, so park the birds where the title plate does not cover them
+    [[96, 214, .9], [790, 214, 1.05], [760, 70, .78]].forEach(function(b, i){
+      if (birds[i]) birds[i].setAttribute("transform",
+        "translate(" + b[0] + "," + b[1] + ") scale(" + b[2] + ")");
+    });
+    return;
+  }
+
+  // The depth layers rise into place, back to front. The entrance is rAF-driven
+  // and rAF does not tick in a background tab, so every hidden layer has a
+  // guaranteed way back to visible.
+  var LAYERS = [["#skSun", 0, 34], ["#skFar", 120, 28], ["#skMid", 260, 22],
+                ["#skNear", 400, 14]];
+  function settle(){
+    LAYERS.forEach(function(l){
+      d3.select(l[0]).interrupt()
+        .style("opacity", 1)
+        .attr("transform", null);
+    });
+  }
+
+  if (document.hidden){
+    settle();
+  } else {
+    LAYERS.forEach(function(l){
+      d3.select(l[0])
+        .style("opacity", 0)
+        .attr("transform", "translate(0," + l[2] + ")")
+        .transition().delay(l[1]).duration(1000).ease(d3.easeCubicOut)
+        .style("opacity", 1)
+        .attr("transform", null);
+    });
+    setTimeout(settle, 12000);
+    document.addEventListener("visibilitychange", function(){
+      if (document.hidden) settle();
+    });
+  }
+
+  d3.timer(function(ms){
+    var t = ms / 1000;
+
+    // the sun breathes; the harmattan haze drifts
+    halo.attr("r", (62 + Math.sin(t * .45) * 5).toFixed(1));
+    cloudA.attr("transform", "translate(" + (Math.sin(t * .12) * 16).toFixed(1) + ",0)");
+    cloudB.attr("transform", "translate(" + (Math.sin(t * .1 + 2) * 14).toFixed(1) + ",0)");
+
+    // the baobabs barely move — they are old and sturdy; the flag ripples
+    treeL.attr("transform", "rotate(" + (Math.sin(t * .6) * .8).toFixed(2) + " 41 384)");
+    treeR.attr("transform", "rotate(" + (Math.sin(t * .6 + 1.4) * .8).toFixed(2) + " 866 384)");
+    flag.attr("transform", "translate(402.6,291) skewY(" + (Math.sin(t * 2.6) * 4).toFixed(2) + ") scale(" +
+              (.94 + Math.abs(Math.sin(t * 1.3)) * .06).toFixed(3) + ",1)");
+
+    // the guinea fowl peck at the ground, out of step with each other
+    var pa = Math.max(0, Math.sin(t * 1.9)), pb = Math.max(0, Math.sin(t * 1.6 + 2));
+    headA.attr("transform", "rotate(" + (pa * 48).toFixed(1) + " 21 6)");
+    headB.attr("transform", "rotate(" + (pb * 48).toFixed(1) + " 21 6)");
+
+    // sunlight glints on the solar panels
+    glint.attr("opacity", (.35 + Math.max(0, Math.sin(t * .8)) * .55).toFixed(2));
+
+    // three birds arc across; they pass behind the title plate mid-flight
+    birds.forEach(function(n, i){
+      var p = ((t * .05) + i * .3) % 1.5;
+      if (p > 1){ n.setAttribute("opacity", 0); return; }
+      n.setAttribute("opacity", 1);
+      var x = -60 + p * 1020;
+      var y = 236 - Math.sin(p * Math.PI) * 96 + Math.sin(t * 3.2 + i) * 2.5;
+      n.setAttribute("transform",
+        "translate(" + x.toFixed(1) + "," + y.toFixed(1) + ") scale(" + (.78 + i * .2).toFixed(2) + ")");
+    });
+  });
+}
+
+/* ---------------------------------------------------------------
+   4. D3 layer — motion and interaction only.
+---------------------------------------------------------------- */
+function withD3(d3){
+  withD3Skyline(d3);
+
+  var cap = d3.select("#ringCap");
+
+  // spokes draw outward from the child at the centre
+  if (!REDUCE){
+    d3.select("#spokes").selectAll("line")
+      .each(function(){
+        var L = this.getTotalLength();
+        d3.select(this).attr("stroke-dasharray", L + " " + L).attr("stroke-dashoffset", L);
+      });
+    d3.select("#nodes").selectAll(".node-g").style("opacity", 0);
+  }
+  var ringSeen = false;
+  var ringObs = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting || ringSeen) return;
+      ringSeen = true;
+      if (REDUCE) return;
+      d3.select("#spokes").selectAll("line")
+        .transition().delay(function(d, i){ return i * 70; })
+        .duration(520).ease(d3.easeCubicOut)
+        .attr("stroke-dashoffset", 0);
+      d3.select("#nodes").selectAll(".node-g")
+        .transition().delay(function(d, i){ return 160 + i * 70; })
+        .duration(420).ease(d3.easeCubicOut)
+        .style("opacity", 1);
+    });
+  }, { threshold:.2 });
+  var ringEl = document.getElementById("ring");
+  if (ringEl) ringObs.observe(ringEl);
+  // 12s failsafe — force every gated animation to its final state
+  setTimeout(function(){
+    d3.select("#spokes").selectAll("line").attr("stroke-dashoffset", 0);
+    d3.select("#nodes").selectAll(".node-g").style("opacity", 1);
+  }, 12000);
+
+  // hover / focus / tap: lift the power, dim the rest, swap the caption
+  var color = d3.scaleOrdinal()
+    .domain(ZONES.map(function(d){ return d.key; }))
+    .range(ZONES.map(function(d){ return d.color; }));
+
+  function focusKey(key){
+    d3.select("#nodes").selectAll(".node-g")
+      .transition().duration(180).ease(d3.easeCubicOut)
+      .style("opacity", function(){
+        return (!key || this.getAttribute("data-key") === key) ? 1 : .3;
+      });
+    d3.select("#spokes").selectAll("line")
+      .transition().duration(180).ease(d3.easeCubicOut)
+      .attr("stroke-opacity", function(d, i){
+        return (!key || ZONES[i].key === key) ? 1 : .2;
+      })
+      .attr("stroke-width", function(d, i){
+        return (!key || ZONES[i].key === key) ? 7 : 4;
+      });
+    var t = key ? ZONES.filter(function(d){ return d.key === key; })[0] : ZONES[0];
+    cap.html("<b>" + t.title + "</b> " + t.blurb)
+       .style("color", key ? d3.color(color(key)).darker(1.4) : null);
+  }
+
+  ZONES.forEach(function(t){
+    if (!t.g) return;
+    var sel = d3.select(t.g);
+    sel.on("mouseenter focus", function(){ focusKey(t.key); })
+       .on("mouseleave blur",  function(){ focusKey(null); })
+       .on("click", function(){ focusKey(t.key); });
+    if (!REDUCE){
+      sel.on("mouseenter.scale", function(){
+        d3.select(t.circle).transition().duration(200).ease(d3.easeCubicOut).attr("r", NODE_R + 4);
+      }).on("mouseleave.scale", function(){
+        d3.select(t.circle).transition().duration(200).ease(d3.easeCubicOut).attr("r", NODE_R);
+      });
+    }
+  });
+}
+
+/* ---------------------------------------------------------------
+   5. Three.js — the city assembles block by block.
+---------------------------------------------------------------- */
+function withThree(THREE){
+  var canvas = document.getElementById("city3d");
+  var fb = document.getElementById("cityFallback");
+  if (!canvas) return;
+  var W = canvas.clientWidth || 900, H = canvas.clientHeight || 340;
+
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas:canvas, antialias:true, alpha:true });
+  } catch (err) { return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  renderer.setSize(W, H, false);
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(30, W / H, .1, 100);
+  camera.position.set(0, 2.2, 12);
+  camera.lookAt(0, 1.5, 0);
+
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x2b1f18, .95));
+  var key = new THREE.DirectionalLight(0xffffff, .85);
+  key.position.set(6, 11, 8);
+  scene.add(key);
+  var rim = new THREE.DirectionalLight(0xf2c88f, .35);
+  rim.position.set(-7, 4, -6);
+  scene.add(rim);
+
+  var group = new THREE.Group();
+  group.position.y = -1.35;
+  scene.add(group);
+
+  var STEP = .64, parts = [];
+  function track(mesh, edgeMat){
+    parts.push({ mesh:mesh, mat:mesh.material, edge:edgeMat || null, targetY:mesh.position.y });
+  }
+
+  BLOCKS.forEach(function(b){
+    var geo = new THREE.BoxGeometry(b.w, b.h, 1.2);
+    var mat = new THREE.MeshLambertMaterial({ color: BRICK[b.c], transparent:true, opacity:0 });
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(b.x, b.y * STEP + b.h / 2, 0);
+    var edges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(geo),
+      new THREE.LineBasicMaterial({ color:0xffffff, transparent:true, opacity:0 })
+    );
+    mesh.add(edges);
+    group.add(mesh);
+    track(mesh, edges.material);
+  });
+
+  // the park strip out in front of the city
+  var park = new THREE.Mesh(
+    new THREE.BoxGeometry(9, .18, 1.5),
+    new THREE.MeshLambertMaterial({ color:0x2e7d4f, transparent:true, opacity:0 })
+  );
+  park.position.set(0, .09, 1.4);
+  group.add(park);
+  track(park);
+
+  // two trees in the park
+  [-1.72, 1.72].forEach(function(tx){
+    var trunk = new THREE.Mesh(
+      new THREE.CylinderGeometry(.06, .08, .44, 8),
+      new THREE.MeshLambertMaterial({ color:0x7a5233, transparent:true, opacity:0 })
+    );
+    trunk.position.set(tx, .4, 1.5);
+    group.add(trunk);
+    track(trunk);
+
+    var crown = new THREE.Mesh(
+      new THREE.SphereGeometry(.3, 18, 14),
+      new THREE.MeshLambertMaterial({ color:0x9bdb8f, transparent:true, opacity:0 })
+    );
+    crown.position.set(tx, .78, 1.5);
+    group.add(crown);
+    track(crown);
+
+    [-.2, .2].forEach(function(px){
+      var puff = new THREE.Mesh(
+        new THREE.SphereGeometry(.19, 14, 10),
+        new THREE.MeshLambertMaterial({ color:0x6cc07a, transparent:true, opacity:0 })
+      );
+      puff.position.set(tx + px, .58, 1.55);
+      group.add(puff);
+      track(puff);
+    });
+  });
+
+  parts.forEach(function(p, i){
+    p.delay = i * 40;
+    p.mesh.position.y = p.targetY + 6;
+  });
+
+  var t0 = null, drag = 0, dragging = false, lastX = 0, spin = 0;
+  var DUR = 520;
+  var ease = function(t){ return 1 - Math.pow(1 - t, 3); };
+
+  function frame(now){
+    if (t0 === null) t0 = now;
+    var e = now - t0;
+    parts.forEach(function(p){
+      var t = Math.min(1, Math.max(0, (e - p.delay) / DUR));
+      var k = ease(t);
+      p.mesh.position.y = p.targetY + 6 * (1 - k);
+      p.mat.opacity = k;
+      if (p.edge) p.edge.opacity = k * .5;
+    });
+    if (!REDUCE) spin += (drag - spin) * .08;
+    group.rotation.y = spin + (REDUCE ? 0 : Math.sin(now / 3400) * .2);
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+
+  var handedOver = false;
+  function handOver(){
+    if (handedOver) return;
+    handedOver = true;
+    canvas.style.transition = "opacity 420ms cubic-bezier(0.23,1,0.32,1)";
+    canvas.style.opacity = 1;
+    if (fb){
+      fb.style.transition = "opacity 420ms cubic-bezier(0.23,1,0.32,1)";
+      fb.style.opacity = 0;
+    }
+  }
+
+  var started = false;
+  function start(){
+    if (started) return;
+    started = true;
+    if (REDUCE){
+      parts.forEach(function(p){
+        p.mesh.position.y = p.targetY;
+        p.mat.opacity = 1;
+        if (p.edge) p.edge.opacity = .5;
+      });
+      renderer.render(scene, camera);
+      handOver();
+      return;
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // Hand over while every block is still at opacity 0 (and normally below the
+  // fold), so the flat city never visibly dissolves into an empty 3D scene.
+  if (!REDUCE){
+    renderer.render(scene, camera);
+    handOver();
+  }
+
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ io.unobserve(e.target); start(); } });
+    }, { threshold:.3 });
+    io.observe(canvas);
+    setTimeout(start, 12000);
+  } else start();
+
+  // drag to turn the city — a spring-ish follow, not a 1:1 tie to the pointer
+  canvas.style.touchAction = "pan-y";
+  canvas.addEventListener("pointerdown", function(ev){
+    dragging = true; lastX = ev.clientX; canvas.setPointerCapture(ev.pointerId);
+  });
+  canvas.addEventListener("pointermove", function(ev){
+    if (!dragging) return;
+    drag += (ev.clientX - lastX) * .008;
+    lastX = ev.clientX;
+  });
+  ["pointerup", "pointercancel"].forEach(function(t){
+    canvas.addEventListener(t, function(){ dragging = false; });
+  });
+
+  addEventListener("resize", function(){
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return;
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+    renderer.setSize(w, h, false);
+  });
+}
+
+/* ---------------------------------------------------------------
+   6. Fit the fixed 900px poster to the viewport
+---------------------------------------------------------------- */
+(function fit(){
+  var wrap = document.getElementById("fit");
+  if (!wrap) return;
+  // zoom rather than transform:scale because zoom reflows layout, so the
+  // wrapper's height is correct by construction
+  function apply(){
+    var w = document.documentElement.clientWidth;
+    if (!w) return;
+    wrap.style.zoom = w / 900;
+  }
+  apply();
+  addEventListener("resize", apply);
+})();
+
+try { if (window.d3) withD3(window.d3); } catch (e) { /* poster stands on its own */ }
+try { if (window.THREE) withThree(window.THREE); } catch (e) { /* flat city stays */ }
+})();
+</script>
+
+</body>
+</html>
